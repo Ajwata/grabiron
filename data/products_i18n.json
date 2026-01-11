@@ -4,7 +4,7 @@
       "uk": "Обладнання для зрізу паль (палерізка) P-350",
       "en": "Pile cutter P-350"
     },
-    "category": "Экскаваторное навесное оборудование",
+    "category": "Демонтаж",
     "url": "https://grabiron.prom.ua/p1708275548-oborudovanie-dlya-sruba.html",
     "price": "Цену уточняйте",
     "availability": "В наличии",
@@ -23,14 +23,15 @@
       "Cutting force": "500 ton"
     },
     "variants": [],
-    "source_notes": ""
+    "source_notes": "",
+    "image": "https://images.prom.ua/6328940194_w640_h640_obladnannya-dlya-srubu.jpg"
   },
   {
     "name": {
       "uk": "Сортувальний грейфер RG (серія GRS)",
       "en": "Sort Grapple RG (GRS series)"
     },
-    "category": "Экскаваторное навесное оборудование",
+    "category": "Сортировка",
     "url": "https://grabiron.prom.ua/p404931681-sortirovochnyj-grejfer-rg.html",
     "price": "Цену уточняйте",
     "availability": "В наличии",
@@ -38,6 +39,7 @@
       "uk": "Сортувальний грейфер серії GRS. На сторінці наведена таблиця моделей з розмірами, вагою, тиском, витратою масла та зусиллям змикання.",
       "en": "Sorting grapple GRS series. The page provides a table of models with dimensions, weight, pressure, oil flow and closing force."
     },
+    "image": "https://images.prom.ua/6328903159_w640_h640_sortuvalnij-grejfer-rg.jpg",
     "characteristics": {},
     "variants": [
       {
@@ -103,7 +105,7 @@
       "uk": "Грейфер для металобрухту серії SG-5",
       "en": "Scrap Grapple SG-5"
     },
-    "category": "Экскаваторное навесное оборудование",
+    "category": "Металолом",
     "url": "https://grabiron.prom.ua/p665830401-grejfer-dlya-metalloloma.html",
     "price": "від 465 000 ₴",
     "availability": "Під замовлення",
@@ -111,6 +113,7 @@
       "uk": "Грейфер для металобрухту серії SG-5. На сторінці вказані базові характеристики та умови поставки.",
       "en": "Scrap grapple SG-5 series. The page provides basic specifications and delivery terms."
     },
+    "image": "https://images.prom.ua/6328917643_w640_h640_grejfer-dlya-metaloloma.jpg",
     "characteristics": {
       "Состояние": "Новое",
       "Тип техники": "Экскаватор",
@@ -131,7 +134,7 @@
       "uk": "Мультипроцесор G3200",
       "en": "Multiprocessor G3200"
     },
-    "category": "Экскаваторное навесное оборудование",
+    "category": "Демонтаж",
     "url": "https://grabiron.prom.ua/p665821097-multiprotsessor-g3200.html",
     "price": "Цену уточняйте",
     "availability": "В наличии",
@@ -245,14 +248,15 @@
         "Closing force C (t)": "400"
       }
     ],
-    "source_notes": ""
+    "source_notes": "",
+    "image": "https://images.prom.ua/1085173411_w640_h640_multiprotsessor-g3200.jpg"
   },
   {
     "name": {
       "uk": "Гідравлічні ножиці GSS",
       "en": "Hydraulic shears GSS"
     },
-    "category": "Экскаваторное навесное оборудование",
+    "category": "Демонтаж",
     "url": "https://grabiron.prom.ua/p665838610-gidravlicheskie-nozhnitsy-gss.html",
     "price": "Цену уточняйте",
     "availability": "Под заказ",
@@ -331,14 +335,15 @@
         "I-beam (mm)": "620"
       }
     ],
-    "source_notes": ""
+    "source_notes": "",
+    "image": "https://images.prom.ua/6328889803_w640_h640_gidravlicheskie-nozhnitsy-gss.jpg"
   },
   {
     "name": {
       "uk": "Мультипроцесор MS2100",
       "en": "Multiprocessor MS2100"
     },
-    "category": "Экскаваторное навесное оборудование",
+    "category": "Демонтаж",
     "url": "https://grabiron.prom.ua/p1153094470-multiprotsessor-ms2100.html",
     "price": "Цену уточняйте",
     "availability": "Под заказ",
@@ -356,14 +361,15 @@
       "Производитель": "ООО \"Грабирон\""
     },
     "variants": [],
-    "source_notes": ""
+    "source_notes": "",
+    "image": "https://images.prom.ua/2301091060_w640_h640_multiprotsessor-ms2100.jpg"
   },
   {
     "name": {
       "uk": "Ковші",
       "en": "Buckets"
     },
-    "category": "Ковши / навесное оборудование",
+    "category": "Другое",
     "url": "https://grabiron.prom.ua/p404951897-kovshi.html",
     "price": "від 20 000 ₴",
     "availability": "Під замовлення",
@@ -375,14 +381,15 @@
       "Для техники": "Погрузчики и экскаваторы до 5 т"
     },
     "variants": [],
-    "source_notes": ""
+    "source_notes": "",
+    "image": "https://images.prom.ua/6328911710_w640_h640_kovshi.jpg"
   },
   {
     "name": {
       "uk": "Швидкознім / швидкознімний механізм / перехідна плита",
       "en": "Quick coupler / adapter plate"
     },
-    "category": "Комплектующие / адаптеры",
+    "category": "Другое",
     "url": "https://grabiron.prom.ua/p404930558-bystrosem-bystrosemnyj-mehanizm.html",
     "price": "від 55 000 ₴",
     "availability": "Під замовлення",
@@ -395,14 +402,15 @@
       "Тип": "механический или гидравлический (под заказ)"
     },
     "variants": [],
-    "source_notes": ""
+    "source_notes": "",
+    "image": "https://images.prom.ua/6328919938_w640_h640_bystrosem-bystrosemnyj-mehanizm.jpg"
   },
   {
     "name": {
       "uk": "Відвал для снігу (гідроповорот) – 3000×1200×1000",
       "en": "Snow blade (hydraulic rotation) – 3000×1200×1000"
     },
-    "category": "Коммунальная техника / навесное",
+    "category": "Другое",
     "url": "https://grabiron.prom.ua/p1254251396-otval-dlya-snega.html",
     "price": "83 000 ₴ (опт: 80 000 ₴ при заказе от 3 шт.)",
     "availability": "Під замовлення",
@@ -417,14 +425,15 @@
       "Положения": "3 (прямо/вправо/влево)"
     },
     "variants": [],
-    "source_notes": ""
+    "source_notes": "",
+    "image": "https://images.prom.ua/6328921236_w640_h640_otval-dlya-snega.jpg"
   },
   {
     "name": {
       "uk": "Відвал універсальний (механічний або гідроповорот) – 3000×650×1020",
       "en": "Universal blade (mechanical or hydraulic) – 3000×650×1020"
     },
-    "category": "Коммунальная техника / навесное",
+    "category": "Другое",
     "url": "https://grabiron.prom.ua/p1254253970-otval-dlya-snega.html",
     "price": "62 000 ₴",
     "availability": "В наличии",
@@ -437,14 +446,15 @@
       "Масса": "540 кг"
     },
     "variants": [],
-    "source_notes": ""
+    "source_notes": "",
+    "image": "https://images.prom.ua/6328922280_w640_h640_otval-dlya-snega.jpg"
   },
   {
     "name": {
       "uk": "Коренерий пнів, дерев (4 модифікації)",
       "en": "Stump and tree remover (4 configurations)"
     },
-    "category": "Навесное для погрузчиков/тракторов",
+    "category": "Другое",
     "url": "https://grabiron.prom.ua/p1227835167-korchevatel-pnej-derevev.html",
     "price": "65 000 ₴",
     "availability": "В наличии",
@@ -456,14 +466,15 @@
       "Страна производитель": "Украина"
     },
     "variants": [],
-    "source_notes": ""
+    "source_notes": "",
+    "image": "https://images.prom.ua/6328933308_w640_h640_korchevatel-pnej-derevev.jpg"
   },
   {
     "name": {
       "uk": "Захват для бочок (на вила навантажувача)",
       "en": "Barrel grab (for loader forks)"
     },
-    "category": "Навесное для погрузчиков",
+    "category": "Другое",
     "url": "https://grabiron.prom.ua/p1254255262-zahvat-dlya-bochek.html",
     "price": "Цену уточняйте",
     "availability": "В наличии",
@@ -475,14 +486,15 @@
       "Совместимость": "Погрузчики/штабелеры/рич-траки с вилами (регулируемыми по ширине)"
     },
     "variants": [],
-    "source_notes": ""
+    "source_notes": "",
+    "image": "https://images.prom.ua/6328931164_w640_h640_zahvat-dlya-bochek.jpg"
   },
   {
     "name": {
       "uk": "Вила для навантажувача – Вили палетні 3в1 ISO 2 з гідрозахватом",
       "en": "Loader forks – Pallet forks 3in1 ISO 2 with hydraulic grab"
     },
-    "category": "Навесное для погрузчиков",
+    "category": "Другое",
     "url": "https://grabiron.prom.ua/p1254256896-vily-dlya-pogruzchika.html",
     "price": "Цену уточняйте",
     "availability": "В наличии",
@@ -495,14 +507,15 @@
       "Функции": "палеты / тюки / колоды"
     },
     "variants": [],
-    "source_notes": ""
+    "source_notes": "",
+    "image": "https://images.prom.ua/6328927460_w640_h640_vily-dlya-pogruzchika.jpg"
   },
   {
     "name": {
       "uk": "Бетонодробарка / ножиці по бетону / мультипроцесор (загальний опис)",
       "en": "Concrete crusher / concrete shears / multiprocessor (general description)"
     },
-    "category": "Экскаваторное навесное оборудование",
+    "category": "Демонтаж",
     "url": "https://grabiron.prom.ua/p1635819887-betonokroshitel-nozhnitsy-betonu.html",
     "price": "Цену уточняйте",
     "availability": "Під замовлення",
@@ -512,14 +525,15 @@
     },
     "characteristics": {},
     "variants": [],
-    "source_notes": ""
+    "source_notes": "",
+    "image": "https://images.prom.ua/6328929414_w640_h640_betonokroshitel-nozhnitsy-po.jpg"
   },
   {
     "name": {
       "uk": "Гідроножиці CS 2500",
       "en": "Hydraulic shears CS 2500"
     },
-    "category": "Экскаваторное навесное оборудование",
+    "category": "Демонтаж",
     "url": "https://grabiron.prom.ua/p2409999618-gidronozhnitsy-2500.html",
     "price": "Цену уточняйте",
     "availability": "В наличии",
@@ -529,6 +543,7 @@
     },
     "characteristics": {},
     "variants": [],
-    "source_notes": ""
+    "source_notes": "",
+    "image": "https://images.prom.ua/6377322143_w640_h640_gidronozhnitsy-cs-2500.jpg"
   }
 ]

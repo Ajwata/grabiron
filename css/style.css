@@ -829,10 +829,12 @@ p {
 .btn-primary:hover {
   background-color: var(--color-primary-dark);
   box-shadow: var(--shadow-primary-lg);
+  color: var(--color-white);
 }
 
 .btn-primary:active {
   background-color: #cc5200;
+  color: var(--color-white);
 }
 
 .btn-secondary {

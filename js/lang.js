@@ -152,10 +152,11 @@ const translations = {
     techCustomDesc: 'Tailored designs to meet specific requirements',
     
     // Categories
-    demolition: 'Demolition & Cutting',
-    'grabs-handling': 'Buckets & Handling',
-    'quick-couplers': 'Adapters',
-    'other-attachments': 'Municipal Equipment',
+    demolition: 'Demolition',
+    sorting: 'Sorting',
+    scrap: 'Scrap',
+    drilling: 'Drilling',
+    others: 'Others',
     
     // Machine Types
     machineTypes: 'Discover Products by Machine Type',
@@ -461,10 +462,11 @@ const translations = {
     techCustom: 'Індивідуальні рішення',
     techCustomDesc: 'Розробка під конкретні вимоги',
         // Categories
-    demolition: 'Знесення та різання',
-    'grabs-handling': 'Ковші та навантаження',
-    'quick-couplers': 'Адаптери',
-    'other-attachments': 'Комунальна техніка',
+    demolition: 'Демонтаж',
+    sorting: 'Сортировка',
+    scrap: 'Металолом',
+    drilling: 'Бурение',
+    others: 'Інше',
     
     // Machine Types
     machineTypes: 'Продукція за типом машини',
