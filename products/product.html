@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="product-title">Product | GrabIron Attachments</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <meta name="description" content="Professional excavator attachments">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">GRAB<span>IRON</span></a>
+      
+            <nav class="main-nav">
+        <ul>
+          <li><a href="/" data-i18n="home">Home</a></li>
+          <li class="has-dropdown">
+            <a href="/products/" data-i18n="products">Products</a>
+            <ul class="dropdown">
+              <li><a href="/products/?category=demolition">Demolition</a></li>
+              <li><a href="/products/?category=grabs-handling">Grabs & Handling</a></li>
+              <li><a href="/products/?category=hole-forming">Hole Forming</a></li>
+              <li><a href="/products/?category=quick-couplers">Quick Couplers</a></li>
+              <li><a href="/products/?category=other-attachments">Other Attachments</a></li>
+            </ul>
+          </li>
+          <li><a href="/about.html" data-i18n="about">About</a></li>
+          <li><a href="/service.html" data-i18n="service">Service</a></li>
+          <li><a href="/downloads.html" data-i18n="downloads">Downloads</a></li>
+          <li><a href="/contact.html" data-i18n="contact">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-right">
+        <div class="language-switcher">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="uk">УКР</button>
+        </div>
+        
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span>☰</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs">
+    <div class="container">
+      <a href="/" data-i18n="home">Home</a> /
+      <a href="/products/" data-i18n="products">Products</a> /
+      <span id="breadcrumb-category"></span> /
+      <span id="breadcrumb-subcategory"></span> /
+      <span id="breadcrumb-product"></span>
+    </div>
+  </div>
+
+  <!-- Product Detail Section -->
+  <section class="product-detail">
+    <div class="container">
+      <div class="product-header">
+        <div class="product-image-wrapper">
+          <img id="product-image" src="" alt="" class="product-image">
+        </div>
+        <div class="product-info">
+          <h1 id="product-name" class="product-name"></h1>
+          <p id="product-model" class="product-model"></p>
+          <div class="product-meta">
+            <span class="carrier-weight">
+              <strong data-i18n="carrier-weight">Carrier Weight:</strong>
+              <span id="product-carrier"></span>
+            </span>
+          </div>
+          <p id="product-description" class="product-description"></p>
+          
+          <div class="product-actions">
+            <a href="../contact.html" class="btn btn-primary" data-i18n="request-quote">Request Quote</a>
+            <a href="../downloads.html" class="btn btn-outline" data-i18n="download-specs">Download Specifications</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features Section -->
+      <div class="product-section">
+        <h2 data-i18n="key-features">Key Features</h2>
+        <ul id="product-features" class="features-list"></ul>
+      </div>
+
+      <!-- Technical Specifications -->
+      <div class="product-section">
+        <h2 data-i18n="technical-specs">Technical Specifications</h2>
+        <div class="specs-table-wrapper">
+          <table id="specs-table" class="specs-table">
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Applications Section -->
+      <div class="product-section">
+        <h2 data-i18n="applications">Applications</h2>
+        <ul id="product-applications" class="applications-list"></ul>
+      </div>
+
+      <!-- Related Products -->
+      <div class="product-section">
+        <h2 data-i18n="related-products">Related Products</h2>
+        <div id="related-products" class="products-grid"></div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="product-section">
+        <h2 data-i18n="inquiry-title">Product Inquiry</h2>
+        <form id="inquiry-form" class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name" data-i18n="form-name">Name *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email" data-i18n="form-email">Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone" data-i18n="form-phone">Phone</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+              <label for="company" data-i18n="form-company">Company</label>
+              <input type="text" id="company" name="company">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message" data-i18n="form-message">Message</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" data-i18n="form-submit">Send Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3 data-i18n="footer-products">Products</h3>
+          <ul>
+            <li><a href="/products/?category=demolition" data-i18n="cat-demolition">Demolition</a></li>
+            <li><a href="/products/?category=grabs-handling" data-i18n="cat-grabs">Grabs & Handling</a></li>
+            <li><a href="/products/?category=hole-forming" data-i18n="cat-hole-forming">Hole Forming</a></li>
+            <li><a href="/products/?category=quick-couplers" data-i18n="cat-couplers">Quick Couplers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 data-i18n="footer-company">Company</h3>
+          <ul>
+            <li><a href="/about.html" data-i18n="about">About Us</a></li>
+            <li><a href="/service.html" data-i18n="service">Service</a></li>
+            <li><a href="/news.html" data-i18n="news">News</a></li>
+            <li><a href="/contact.html" data-i18n="contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 data-i18n="footer-resources">Resources</h3>
+          <ul>
+            <li><a href="/downloads.html" data-i18n="downloads">Downloads</a></li>
+            <li><a href="/video.html" data-i18n="videos">Videos</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 data-i18n="footer-contact">Contact Info</h3>
+          <ul>
+            <li>Email: info@grabiron.com</li>
+            <li>Phone: +1 234 567 890</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 GrabIron Attachments. <span data-i18n="footer-rights">All rights reserved</span>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/js/main.js"></script>
+  <script type="module" src="/js/productPage.js"></script>
+</body>
+</html>

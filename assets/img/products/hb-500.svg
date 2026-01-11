@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8e8e8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f8f8f8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#grad)"/>
+  
+  <!-- Hydraulic Breaker illustration -->
+  <g opacity="0.7">
+    <!-- Main body -->
+    <rect x="270" y="120" width="60" height="140" fill="#333" opacity="0.3" rx="5"/>
+    <!-- Top mount -->
+    <rect x="260" y="110" width="80" height="20" fill="#555" opacity="0.4" rx="3"/>
+    <!-- Chisel -->
+    <path d="M 290 260 L 300 340 L 310 260 Z" fill="#ff6600" opacity="0.7"/>
+    <!-- Impact indicator lines -->
+    <line x1="250" y1="180" x2="230" y2="180" stroke="#ff6600" stroke-width="3" opacity="0.5"/>
+    <line x1="350" y1="180" x2="370" y2="180" stroke="#ff6600" stroke-width="3" opacity="0.5"/>
+    <line x1="250" y1="200" x2="220" y2="200" stroke="#ff6600" stroke-width="3" opacity="0.5"/>
+    <line x1="350" y1="200" x2="380" y2="200" stroke="#ff6600" stroke-width="3" opacity="0.5"/>
+  </g>
+  
+  <text x="300" y="390" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#333" text-anchor="middle">HB-500</text>
+  <text x="300" y="420" font-family="Arial, sans-serif" font-size="16" fill="#666" text-anchor="middle">Hydraulic Breaker</text>
+</svg>

@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог обладнання | GrabIron</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/preloader.css">
+  <style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes shimmer {
+      0% {
+        background-position: -1000px 0;
+      }
+      100% {
+        background-position: 1000px 0;
+      }
+    }
+    
+    .catalog-filters {
+      background: white;
+      padding: 2.5rem 0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 80px;
+      z-index: 100;
+    }
+    
+    .filters-toggle {
+      display: none;
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, #ff6600, #ff8533);
+      color: white;
+      border: none;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+      margin-bottom: 1rem;
+    }
+    
+    .filters-toggle:hover {
+      background: linear-gradient(135deg, #e65c00, #ff6600);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
+    }
+    
+    .toggle-icon {
+      transition: transform 0.3s ease;
+      font-size: 0.875rem;
+    }
+    
+    .filters-toggle.active .toggle-icon {
+      transform: rotate(180deg);
+    }
+    
+    .filters-content {
+      transition: max-height 0.4s ease, opacity 0.3s ease;
+      overflow: hidden;
+    }
+    
+    .filter-tabs {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    
+    .filter-tab {
+      padding: 0.875rem 1.75rem;
+      background: #f9fafb;
+      border: none;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      position: relative;
+      overflow: hidden;
+      color: #374151;
+    }
+    
+    .filter-tab::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #ff6600, #ff8533);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    
+    .filter-tab:hover {
+      background: rgba(255, 102, 0, 0.05);
+      transform: translateY(-2px);
+      color: #ff6600;
+    }
+    
+    .filter-tab:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .filter-tab.active {
+      background: linear-gradient(135deg, #ff6600 0%, #e65c00 100%);
+      color: white;
+      box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
+    }
+    
+    .filter-tab.active::before {
+      transform: scaleX(1);
+      background: white;
+    }
+    
+    .search-box {
+      max-width: 650px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .search-box::before {
+      content: '';
+      position: absolute;
+      left: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.5;
+    }
+    
+    .search-box input {
+      width: 100%;
+      padding: 1.25rem 1.5rem 1.25rem 3.5rem;
+      font-size: 1rem;
+      border: 2px solid #e5e7eb;
+      outline: none;
+      transition: all 0.3s ease;
+      background: #f9fafb;
+    }
+    
+    .search-box input:focus {
+      border-color: #ff6600;
+      background: white;
+      box-shadow: 0 0 0 4px rgba(255, 102, 0, 0.1);
+    }
+    
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2.5rem;
+      padding: 3.5rem 0;
+    }
+    
+    .product-card {
+      background: white;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      animation: fadeInUp 0.6s ease-out;
+      animation-fill-mode: both;
+    }
+    
+    .product-card:nth-child(1) { animation-delay: 0.1s; }
+    .product-card:nth-child(2) { animation-delay: 0.2s; }
+    .product-card:nth-child(3) { animation-delay: 0.3s; }
+    .product-card:nth-child(4) { animation-delay: 0.4s; }
+    .product-card:nth-child(5) { animation-delay: 0.5s; }
+    .product-card:nth-child(6) { animation-delay: 0.6s; }
+    
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255,102,0,0.05) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+    
+    .product-card:hover::before {
+      opacity: 1;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 0 0 2px rgba(255, 102, 0, 0.1);
+    }
+    
+    .product-image {
+      width: 100%;
+      height: 240px;
+      background: linear-gradient(135deg, #f9fafb 0%, #e5e7eb 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.875rem;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .product-image::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      height: 4px;
+      background: linear-gradient(90deg, #ff6600, #ff8533, #ffa366);
+    }
+    
+    .product-content {
+      padding: 1.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .product-category {
+      font-size: 0.75rem;
+      color: #ff6600;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin-bottom: 0.75rem;
+      display: inline-block;
+      background: rgba(255, 102, 0, 0.1);
+      padding: 0.25rem 0.75rem;
+    }
+    
+    .product-title {
+      font-size: 1.375rem;
+      margin-bottom: 0.875rem;
+      color: #111827;
+      line-height: 1.4;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    
+    .product-card:hover .product-title {
+      color: #ff6600;
+    }
+    
+    .product-description {
+      font-size: 0.95rem;
+      color: #6b7280;
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+      flex: 1;
+    }
+    
+    .product-specs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+    
+    .spec-badge {
+      padding: 0.375rem 0.875rem;
+      background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+      border: 1px solid #d1d5db;
+      font-size: 0.75rem;
+      color: #374151;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .spec-badge:hover {
+      background: rgba(255, 102, 0, 0.1);
+      border-color: #ff6600;
+      color: #ff6600;
+    }
+    
+    .product-actions {
+      display: flex;
+      gap: 0.75rem;
+    }
+    
+    .btn-details {
+      flex: 1;
+      padding: 1rem;
+      background: linear-gradient(135deg, #ff6600 0%, #e65c00 100%);
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.875rem;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: none;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn-details::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .btn-details:hover::before {
+      left: 100%;
+    }
+    
+    .btn-details:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
+    }
+    
+    .btn-details:active {
+      transform: translateY(0);
+    }
+    
+    .no-results {
+      text-align: center;
+      padding: 5rem 0;
+      color: #9ca3af;
+      font-size: 1.25rem;
+    }
+    
+    .loading {
+      text-align: center;
+      padding: 5rem 0;
+      font-size: 1.25rem;
+      color: #9ca3af;
+    }
+    
+    .loading::after {
+      content: '';
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      margin-left: 1rem;
+      border: 4px solid #f3f4f6;
+      border-top-color: #ff6600;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    /* Mobile filters toggle */
+    @media (max-width: 768px) {
+      .catalog-filters {
+        padding: 1rem 0;
+      }
+      
+      .filters-toggle {
+        display: flex;
+      }
+      
+      .filters-content {
+        max-height: 0;
+        opacity: 0;
+        pointer-events: none;
+      }
+      
+      .filters-content.active {
+        max-height: 1000px;
+        opacity: 1;
+        pointer-events: auto;
+      }
+      
+      .filter-tabs {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .filter-tab {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    
+    @media (min-width: 769px) {
+      .filters-toggle {
+        display: none;
+      }
+      
+      .filters-content {
+        max-height: none;
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo"><img src="../assets/img/logo.png" alt="GrabIron" style="height: 60px;"></div>
+      <div class="loader-container">
+        <div class="gear gear-outer"></div>
+        <div class="gear gear-inner"></div>
+        <div class="loader-center"></div>
+      </div>
+      <div class="preloader-text">Loading...</div>
+    </div>
+  </div>
+  
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo"><img src="../assets/img/logo.png" alt="GrabIron" style="height: 50px;"></a>
+      
+      <nav class="main-nav">
+        <ul>
+          <li><a href="/" data-i18n="home">Home</a></li>
+          <li><a href="/products/catalog.html" class="active" data-i18n="catalog">Catalog</a></li>
+          <li><a href="/about.html" data-i18n="about">About</a></li>
+          <li><a href="/service.html" data-i18n="service">Service</a></li>
+          <li><a href="/contact.html" data-i18n="contact">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-right">
+        <div class="language-switcher">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="uk">УКР</button>
+        </div>
+        
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span>☰</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Filters -->
+  <section class="catalog-filters">
+    <div class="container">
+      <button class="filters-toggle" id="filters-toggle">
+        <span class="toggle-icon">▼</span>
+        <span class="toggle-text" data-i18n="showFilters">Показати фільтри</span>
+      </button>
+      
+      <div class="filters-content" id="filters-content">
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-category="all"></button>
+          <button class="filter-tab" data-category="demolition"></button>
+          <button class="filter-tab" data-category="grabs-handling"></button>
+          <button class="filter-tab" data-category="quick-couplers"></button>
+          <button class="filter-tab" data-category="other-attachments"></button>
+        </div>
+        
+        <div class="search-box">
+          <input type="text" id="search-input" placeholder="Пошук товарів..." data-i18n-placeholder="searchPlaceholder">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Grid -->
+  <section class="catalog-products">
+    <div class="container">
+      <div id="products-grid" class="products-grid">
+        <div class="loading"></div>
+      </div>
+      <div id="no-results" class="no-results" style="display: none;">
+        <h3></h3>
+        <p data-i18n="noResultsDesc"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>GrabIron Attachments</h3>
+          <p data-i18n="footerDesc">Premium excavator and skid steer attachments engineered for the toughest jobs. Built to last, designed to perform.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3 data-i18n="quickLinks">Quick Links</h3>
+          <ul>
+            <li><a href="/" data-i18n="home">Home</a></li>
+            <li><a href="/products/" data-i18n="products">Products</a></li>
+            <li><a href="/about.html" data-i18n="about">About Us</a></li>
+            <li><a href="/service.html" data-i18n="service">Service & Support</a></li>
+            <li><a href="/downloads.html" data-i18n="downloads">Downloads</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3 data-i18n="products">Products</h3>
+          <ul>
+            <li><a href="/products/?category=demolition" data-i18n="demolition">Demolition</a></li>
+            <li><a href="/products/?category=grabs-handling" data-i18n="grabs-handling">Grabs & Handling</a></li>
+            <li><a href="/products/?category=quick-couplers" data-i18n="quick-couplers">Quick Couplers</a></li>
+            <li><a href="/products/?category=other-attachments" data-i18n="other-attachments">Other Attachments</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3 data-i18n="contact">Contact</h3>
+          <p><span data-i18n="email">Email</span>: info@grabiron.com<br>
+          <span data-i18n="phone">Phone</span>: +1 (555) 123-4567<br>
+          Mon-Fri: 8:00 AM - 6:00 PM</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 GrabIron Attachments. <span data-i18n="allRightsReserved">All rights reserved</span>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { fetchProducts } from '../js/api.js';
+    import { initLangSwitcher, t, getCurrentLang } from '../js/lang.js';
+    import { initAnimations } from '../js/animations.js';
+    
+    // Initialize language switcher and animations
+    initLangSwitcher();
+    initAnimations();
+    
+    // Update category tabs and other text when language changes
+    function updateUIText() {
+      // Update filter tabs
+      document.querySelectorAll('.filter-tab').forEach(tab => {
+        const category = tab.dataset.category;
+        if (category === 'all') {
+          tab.textContent = t('allProducts');
+        } else {
+          tab.textContent = t(category);
+        }
+      });
+      
+      // Update loading/no results text
+      const loadingEl = document.querySelector('.loading');
+      if (loadingEl) loadingEl.textContent = t('loading');
+      
+      const noResultsTitle = document.querySelector('.no-results h3');
+      if (noResultsTitle) noResultsTitle.textContent = t('noResults');
+    }
+    
+    // Call updateUIText after init
+    updateUIText();
+    
+    let allProducts = [];
+    let currentCategory = 'all';
+    let searchQuery = '';
+    
+    // Load products
+    async function loadProducts() {
+      try {
+        console.log('Starting to load products...');
+        const data = await fetchProducts();
+        console.log('Products fetched:', data);
+        console.log('Number of products:', data.length);
+        
+        // Transform products for display
+        allProducts = data.map(product => {
+          // Get Ukrainian name for stable ID generation
+          const ukName = typeof product.nameUk === 'string' ? product.nameUk : 
+                        (product.nameUk ? product.nameUk : product.name);
+          return {
+            id: ukName.toLowerCase().replace(/[^a-z0-9а-яіїєґ]+/g, '-'),
+            name: product.name,
+            nameUk: product.nameUk,
+            category: product.category,
+            description: product.description,
+            price: product.price,
+            availability: product.availability,
+            url: product.url,
+            characteristics: product.characteristics,
+            variants: product.variants
+          };
+        });
+        
+        console.log('Products transformed:', allProducts.length);
+        renderProducts();
+      } catch (error) {
+        console.error('Error loading products:', error);
+        document.getElementById('products-grid').innerHTML = 
+          `<div class="loading">${t('loading')}</div>`;
+      }
+    }
+    
+    // Render products
+    function renderProducts() {
+      console.log('renderProducts called with', allProducts.length, 'products');
+      console.log('Current category:', currentCategory);
+      console.log('Search query:', searchQuery);
+      
+      const filtered = allProducts.filter(product => {
+        // Category filter
+        if (currentCategory !== 'all') {
+          const categoryMap = {
+            'demolition': 'Экскаваторное навесное оборудование',
+            'grabs-handling': ['Ковши / навесное оборудование', 'Навесное для погрузчиков', 'Навесное для погрузчиков/тракторов'],
+            'quick-couplers': 'Комплектующие / адаптеры',
+            'other-attachments': 'Коммунальная техника / навесное'
+          };
+          
+          const targetCategory = categoryMap[currentCategory];
+          if (Array.isArray(targetCategory)) {
+            if (!targetCategory.includes(product.category)) return false;
+          } else {
+            if (product.category !== targetCategory) return false;
+          }
+        }
+        
+        // Search filter
+        if (searchQuery) {
+          const query = searchQuery.toLowerCase();
+          return product.name.toLowerCase().includes(query) ||
+                 product.description.toLowerCase().includes(query);
+        }
+        
+        return true;
+      });
+      
+      console.log('Filtered products:', filtered.length);
+      
+      const grid = document.getElementById('products-grid');
+      const noResults = document.querySelector('.no-results');
+      
+      if (filtered.length === 0) {
+        grid.style.display = 'none';
+        noResults.style.display = 'block';
+        return;
+      }
+      
+      grid.style.display = 'grid';
+      noResults.style.display = 'none';
+      
+      // Helper function to translate availability
+      function translateAvailability(availability) {
+        if (!availability) return '';
+        const lower = availability.toLowerCase();
+        if (lower.includes('наличии') || lower.includes('наявності') || lower.includes('stock')) {
+          return t('inStock');
+        }
+        if (lower.includes('заказ') || lower.includes('замовлення') || lower.includes('order')) {
+          return t('onOrder');
+        }
+        if (lower.includes('уточняйте') || lower.includes('уточнюйте')) {
+          return t('priceOnRequest');
+        }
+        return t(availability) || availability;
+      }
+      
+      grid.innerHTML = filtered.map(product => {
+        const categoryName = getCategoryDisplayName(product.category);
+        const carrierWeight = extractCarrierWeight(product);
+        const variantsCount = product.variants?.length || 0;
+        
+        return `
+          <div class="product-card">
+            <div class="product-image" data-i18n="photo">Photo</div>
+            <div class="product-content">
+              <div class="product-category">${categoryName}</div>
+              <h3 class="product-title">${product.name}</h3>
+              <p class="product-description">${product.description}</p>
+              <div class="product-specs">
+                ${carrierWeight !== 'N/A' ? `<span class="spec-badge">${carrierWeight}</span>` : ''}
+                ${variantsCount > 0 ? `<span class="spec-badge">${variantsCount} ${t('variants')}</span>` : ''}
+                <span class="spec-badge">${translateAvailability(product.availability)}</span>
+              </div>
+              <div class="product-actions">
+                <a href="/products/detail.html?id=${product.id}" class="btn-details">${t('viewDetails')}</a>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+    
+    function getCategoryDisplayName(category) {
+      // Map Russian categories to translation keys
+      const categoryTranslationMap = {
+        'Экскаваторное навесное оборудование': 'categoryExcavator',
+        'Ковши / навесное оборудование': 'categoryBuckets',
+        'Комплектующие / адаптеры': 'categoryComponents',
+        'Коммунальная техника / навесное': 'categoryMunicipal',
+        'Навесное для погрузчиков/тракторов': 'categoryLoaders',
+        'Навесное для погрузчиков': 'categoryLoaders'
+      };
+      
+      const translationKey = categoryTranslationMap[category];
+      return translationKey ? t(translationKey) : category;
+    }
+    
+    function extractCarrierWeight(product) {
+      const chars = product.characteristics || {};
+      return chars['Excavator class'] || 
+             chars['Machine class (t)'] || 
+             chars['Класс машин (t)'] ||
+             chars['Экскаватор'] || 
+             'N/A';
+    }
+    
+    // Event listeners
+    document.querySelectorAll('.filter-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        currentCategory = tab.dataset.category;
+        renderProducts();
+      });
+    });
+    
+    document.getElementById('search-input').addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      setTimeout(() => renderProducts(), 300);
+    });
+    
+    // Check URL params
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryParam = urlParams.get('category');
+    if (categoryParam) {
+      currentCategory = categoryParam;
+      document.querySelectorAll('.filter-tab').forEach(tab => {
+        if (tab.dataset.category === categoryParam) {
+          tab.click();
+        }
+      });
+    }
+    
+    // Initialize
+    loadProducts();
+    
+    // Mobile filters toggle
+    const filtersToggle = document.getElementById('filters-toggle');
+    const filtersContent = document.getElementById('filters-content');
+    
+    if (filtersToggle && filtersContent) {
+      filtersToggle.addEventListener('click', () => {
+        filtersToggle.classList.toggle('active');
+        filtersContent.classList.toggle('active');
+        
+        const toggleText = filtersToggle.querySelector('.toggle-text');
+        if (filtersContent.classList.contains('active')) {
+          toggleText.setAttribute('data-i18n', 'hideFilters');
+          toggleText.textContent = getCurrentLang() === 'uk' ? 'Сховати фільтри' : 'Hide Filters';
+        } else {
+          toggleText.setAttribute('data-i18n', 'showFilters');
+          toggleText.textContent = getCurrentLang() === 'uk' ? 'Показати фільтри' : 'Show Filters';
+        }
+      });
+      
+      // Auto-collapse after filter selection on mobile
+      if (window.innerWidth <= 768) {
+        document.querySelectorAll('.filter-tab').forEach(tab => {
+          tab.addEventListener('click', () => {
+            setTimeout(() => {
+              filtersToggle.classList.remove('active');
+              filtersContent.classList.remove('active');
+              const toggleText = filtersToggle.querySelector('.toggle-text');
+              toggleText.setAttribute('data-i18n', 'showFilters');
+              toggleText.textContent = getCurrentLang() === 'uk' ? 'Показати фільтри' : 'Show Filters';
+            }, 300);
+          });
+        });
+      }
+    }
+  </script>
+  
+  <script type="module" src="../js/main.js"></script>
+  <script type="module" src="../js/animations.js"></script>
+  <script type="module" src="../js/preloader.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GrabIron - Animation Demo</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <style>
+    .demo-section {
+      padding: 80px 20px;
+      min-height: 400px;
+      background: #f5f5f5;
+      margin: 20px 0;
+    }
+    
+    .demo-section:nth-child(even) {
+      background: white;
+    }
+    
+    .demo-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #1a1a1a;
+    }
+    
+    .demo-desc {
+      text-align: center;
+      color: #666;
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
+    
+    .demo-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .demo-card {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .stat-item .stat-number {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #ff6600;
+      margin-bottom: 10px;
+    }
+    
+    .stat-item .stat-label {
+      font-size: 1.1rem;
+      color: #666;
+    }
+    
+    .button-demo {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 40px 0;
+    }
+    
+    .demo-btn {
+      padding: 15px 40px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary {
+      background: #ff6600;
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background: #e65c00;
+      transform: translateY(-2px);
+    }
+    
+    .cta-button {
+      background: linear-gradient(135deg, #ff6600, #ff8533);
+      color: white;
+    }
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .feature-card {
+      background: white;
+      padding: 35px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 20px;
+      color: #ff6600;
+    }
+    
+    .hero-demo {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    
+    .hero-demo h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+    
+    .hero-demo p {
+      font-size: 1.5rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Hero Demo -->
+  <section class="hero-demo">
+    <div>
+      <h1>🏭 GrabIron Animations</h1>
+      <p>Индустриальные микро-анимации в действии</p>
+      <div class="button-demo">
+        <button class="demo-btn btn-primary">Кнопка с пульсацией</button>
+        <button class="demo-btn cta-button">CTA кнопка</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Animated Counters Demo -->
+  <section class="demo-section">
+    <h2 class="demo-title">📊 Анимированные счетчики</h2>
+    <p class="demo-desc">Числа анимируются при прокрутке в зону видимости</p>
+    
+    <div class="stat-grid">
+      <div class="stat-item">
+        <div class="stat-number" data-stat-count="15">15+</div>
+        <div class="stat-label">Лет опыта</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-stat-count="500">500+</div>
+        <div class="stat-label">Проектов</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-stat-count="98">98%</div>
+        <div class="stat-label">Довольных клиентов</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-stat-count="30">30+</div>
+        <div class="stat-label">Стран</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Corner Bolts & Welding Sparks Demo -->
+  <section class="demo-section benefits-bar">
+    <h2 class="demo-title">🔩 Угловые болты + Сварочные искры</h2>
+    <p class="demo-desc">Металлические болты в углах + искры на границах секции</p>
+    
+    <div class="demo-card-grid">
+      <div class="demo-card">
+        <h3>Реалистичные болты</h3>
+        <p>3D эффект с тенями и бликами</p>
+      </div>
+      <div class="demo-card">
+        <h3>Пульсация</h3>
+        <p>Каждый болт пульсирует с задержкой</p>
+      </div>
+      <div class="demo-card">
+        <h3>Сварочные искры</h3>
+        <p>На верхней и нижней границе</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Tools Demo -->
+  <section class="demo-section products-section">
+    <h2 class="demo-title">🔧 Парящие инструменты</h2>
+    <p class="demo-desc">Тонкие парящие иконки инструментов на фоне (прозрачность 8%)</p>
+    
+    <div class="demo-card-grid">
+      <div class="demo-card">
+        <h3>Гаечный ключ</h3>
+        <p>Плавающая анимация 8 секунд</p>
+      </div>
+      <div class="demo-card">
+        <h3>Шестеренка</h3>
+        <p>Плавающая анимация 10 секунд</p>
+      </div>
+      <div class="demo-card">
+        <h3>Галочка качества</h3>
+        <p>Плавающая анимация 12 секунд</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quality Badges Demo -->
+  <section class="demo-section industries-section">
+    <h2 class="demo-title">⭐ Значки качества</h2>
+    <p class="demo-desc">Звезды качества на карточках (наведите для вращения)</p>
+    
+    <div class="feature-grid">
+      <div class="feature-card" data-premium>
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+        </div>
+        <h3>Премиум качество</h3>
+        <p>Высококачественные материалы</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+          </svg>
+        </div>
+        <h3>Экспертная разработка</h3>
+        <p>Точные расчеты и испытания</p>
+      </div>
+      
+      <div class="feature-card" data-premium>
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+          </svg>
+        </div>
+        <h3>Надежная поддержка</h3>
+        <p>Сервис и гарантия</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pulse Indicators Demo -->
+  <section class="demo-section">
+    <h2 class="demo-title">💫 Пульсирующие индикаторы</h2>
+    <p class="demo-desc">Расширяющиеся кольца вокруг важных кнопок</p>
+    
+    <div class="button-demo">
+      <button class="demo-btn btn-primary">Начать работу</button>
+      <button class="demo-btn cta-button">Связаться с нами</button>
+      <button class="demo-btn btn-primary" data-pulse>Заказать звонок</button>
+    </div>
+  </section>
+
+  <!-- Summary -->
+  <section class="demo-section">
+    <h2 class="demo-title">✨ Все эффекты активны!</h2>
+    <p class="demo-desc">Прокрутите страницу, чтобы увидеть все анимации в действии</p>
+    
+    <div class="demo-card-grid">
+      <div class="demo-card">
+        <h3>🔩 Болты</h3>
+        <p>Металлические детали в углах</p>
+      </div>
+      <div class="demo-card">
+        <h3>🔧 Инструменты</h3>
+        <p>Парящие иконки на фоне</p>
+      </div>
+      <div class="demo-card">
+        <h3>📊 Счетчики</h3>
+        <p>Анимированные числа</p>
+      </div>
+      <div class="demo-card">
+        <h3>💫 Пульсация</h3>
+        <p>Кольца вокруг кнопок</p>
+      </div>
+      <div class="demo-card">
+        <h3>⚡ Искры</h3>
+        <p>Эффект сварки на границах</p>
+      </div>
+      <div class="demo-card">
+        <h3>⭐ Значки</h3>
+        <p>Звезды качества</p>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="/js/animations.js"></script>
+  <script type="module">
+    import { initAnimations } from '/js/animations.js';
+    initAnimations();
+  </script>
+</body>
+</html>

@@ -1,0 +1,534 @@
+[
+  {
+    "name": {
+      "uk": "Обладнання для зрізу паль (палерізка) P-350",
+      "en": "Pile cutter P-350"
+    },
+    "category": "Экскаваторное навесное оборудование",
+    "url": "https://grabiron.prom.ua/p1708275548-oborudovanie-dlya-sruba.html",
+    "price": "Цену уточняйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Палерізка P-350 призначена для зрізу паль на висоті. Оснащується змінними ножами. В описі вказані швидкість та зусилля різання.",
+      "en": "Pile cutter P-350 is designed for cutting piles at height. Equipped with replaceable blades. Description includes cutting speed and cutting force."
+    },
+    "characteristics": {
+      "Производитель": "Grabiron",
+      "Модель": "P-350",
+      "Excavator class": "15–35 t",
+      "Oil pressure": "260 bar",
+      "Oil flow": "125 l/min",
+      "Weight": "1200 kg",
+      "Cutting speed": "10–15 sec",
+      "Cutting force": "500 ton"
+    },
+    "variants": [],
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Сортувальний грейфер RG (серія GRS)",
+      "en": "Sort Grapple RG (GRS series)"
+    },
+    "category": "Экскаваторное навесное оборудование",
+    "url": "https://grabiron.prom.ua/p404931681-sortirovochnyj-grejfer-rg.html",
+    "price": "Цену уточняйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Сортувальний грейфер серії GRS. На сторінці наведена таблиця моделей з розмірами, вагою, тиском, витратою масла та зусиллям змикання.",
+      "en": "Sorting grapple GRS series. The page provides a table of models with dimensions, weight, pressure, oil flow and closing force."
+    },
+    "characteristics": {},
+    "variants": [
+      {
+        "Модель": "GRS 30",
+        "Класс машин (t)": "12-20",
+        "Вес (kg)": "950",
+        "Раскрытие челюстей (mm)": "1500",
+        "Высота (mm)": "1620",
+        "Ширина (mm)": "1170",
+        "Рабочее давление (bar)": "250",
+        "Oil flow (l/min)": "80",
+        "Усилие смыкания (t)": "35"
+      },
+      {
+        "Модель": "GRS 80",
+        "Класс машин (t)": "20-30",
+        "Вес (kg)": "1650",
+        "Раскрытие челюстей (mm)": "2000",
+        "Высота (mm)": "2000",
+        "Ширина (mm)": "1350",
+        "Рабочее давление (bar)": "260",
+        "Oil flow (l/min)": "125",
+        "Усилие смыкания (t)": "40"
+      },
+      {
+        "Модель": "GRS 120",
+        "Класс машин (t)": "30-50",
+        "Вес (kg)": "1850",
+        "Раскрытие челюстей (mm)": "2150",
+        "Высота (mm)": "2450",
+        "Ширина (mm)": "1600",
+        "Рабочее давление (bar)": "260",
+        "Oil flow (l/min)": "160",
+        "Усилие смыкания (t)": "50"
+      },
+      {
+        "Модель": "GRS 150",
+        "Класс машин (t)": "50-70",
+        "Вес (kg)": "2400",
+        "Раскрытие челюстей (mm)": "2400",
+        "Высота (mm)": "2690",
+        "Ширина (mm)": "1990",
+        "Рабочее давление (bar)": "260",
+        "Oil flow (l/min)": "180",
+        "Усилие смыкания (t)": "65"
+      },
+      {
+        "Модель": "GRS 250",
+        "Класс машин (t)": "70-120",
+        "Вес (kg)": "3100",
+        "Раскрытие челюстей (mm)": "2500",
+        "Высота (mm)": "2950",
+        "Ширина (mm)": "2200",
+        "Рабочее давление (bar)": "260",
+        "Oil flow (l/min)": "220",
+        "Усилие смыкания (t)": "85"
+      }
+    ],
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Грейфер для металобрухту серії SG-5",
+      "en": "Scrap Grapple SG-5"
+    },
+    "category": "Экскаваторное навесное оборудование",
+    "url": "https://grabiron.prom.ua/p665830401-grejfer-dlya-metalloloma.html",
+    "price": "від 465 000 ₴",
+    "availability": "Під замовлення",
+    "description": {
+      "uk": "Грейфер для металобрухту серії SG-5. На сторінці вказані базові характеристики та умови поставки.",
+      "en": "Scrap grapple SG-5 series. The page provides basic specifications and delivery terms."
+    },
+    "characteristics": {
+      "Состояние": "Новое",
+      "Тип техники": "Экскаватор",
+      "Гарантийный срок": "12 мес",
+      "Производитель": "Grabiron",
+      "Страна производитель": "Украина",
+      "Ширина захвата": "1.2 м",
+      "Максимальная площадь захвата": "0.75 м²",
+      "Захват на 360 градусов": "Да",
+      "Высота": "2.1 м",
+      "Ширина": "1.2 м"
+    },
+    "variants": [],
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Мультипроцесор G3200",
+      "en": "Multiprocessor G3200"
+    },
+    "category": "Экскаваторное навесное оборудование",
+    "url": "https://grabiron.prom.ua/p665821097-multiprotsessor-g3200.html",
+    "price": "Цену уточняйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Мультипроцесор серії 3200 зі швидкою системою зміни щелеп. На сторінці наведена таблиця специфікацій за типами щелеп (C/S/B/P/Z).",
+      "en": "Multiprocessor 3200 series with quick jaw change system. The page provides specifications table for jaw types (C/S/B/P/Z)."
+    },
+    "characteristics": {
+      "Производитель": "Grabiron",
+      "Гарантия": "12 мес (указано на сайте продавца)"
+    },
+    "variants": [
+      {
+        "Jaw": "C-Jaw",
+        "Excavator class (t)": "25-48",
+        "Oil pressure open/close (bar)": "350",
+        "Oil pressure rotation (bar)": "160",
+        "Oil flow open/close (l/min)": "200",
+        "Oil flow rotation (l/min)": "40",
+        "Open time (sec)": "1.5",
+        "Close time (sec)": "1.5",
+        "Total weight incl. jaw (kg)": "2770",
+        "Jaw weight (kg)": "1220",
+        "Length H (mm)": "2340",
+        "Width D (mm)": "1770",
+        "Jaw opening M (mm)": "800",
+        "Jaw width fixed (mm)": "330",
+        "Cutting edge length (mm)": "520",
+        "Closing force A (t)": "95",
+        "Closing force B (t)": "140",
+        "Closing force C (t)": "300"
+      },
+      {
+        "Jaw": "S-Jaw",
+        "Excavator class (t)": "25-48",
+        "Oil pressure open/close (bar)": "350",
+        "Oil pressure rotation (bar)": "160",
+        "Oil flow open/close (l/min)": "200",
+        "Oil flow rotation (l/min)": "40",
+        "Open time (sec)": "1.5",
+        "Close time (sec)": "1.5",
+        "Total weight incl. jaw (kg)": "2450",
+        "Jaw weight (kg)": "880",
+        "Length H (mm)": "2230",
+        "Width D (mm)": "1580",
+        "Jaw opening M (mm)": "420",
+        "Jaw width fixed (mm)": "220",
+        "Cutting edge length (mm)": "520",
+        "Closing force A (t)": "120",
+        "Closing force B (t)": "290",
+        "Closing force C (t)": "580"
+      },
+      {
+        "Jaw": "B-Jaw",
+        "Excavator class (t)": "25-48",
+        "Oil pressure open/close (bar)": "350",
+        "Oil pressure rotation (bar)": "160",
+        "Oil flow open/close (l/min)": "200",
+        "Oil flow rotation (l/min)": "40",
+        "Open time (sec)": "1.5",
+        "Close time (sec)": "1.5",
+        "Total weight incl. jaw (kg)": "2750",
+        "Jaw weight (kg)": "1200",
+        "Length H (mm)": "2315",
+        "Width D (mm)": "1885",
+        "Jaw opening M (mm)": "850",
+        "Jaw width fixed (mm)": "360",
+        "Cutting edge length (mm)": "130",
+        "Closing force A (t)": "95",
+        "Closing force B (t)": "130",
+        "Closing force C (t)": "275"
+      },
+      {
+        "Jaw": "P-Jaw",
+        "Excavator class (t)": "25-48",
+        "Oil pressure open/close (bar)": "350",
+        "Oil pressure rotation (bar)": "160",
+        "Oil flow open/close (l/min)": "200",
+        "Oil flow rotation (l/min)": "40",
+        "Open time (sec)": "1.5",
+        "Close time (sec)": "1.5",
+        "Total weight incl. jaw (kg)": "2770",
+        "Jaw weight (kg)": "1040",
+        "Length H (mm)": "2450",
+        "Width D (mm)": "1900",
+        "Jaw opening M (mm)": "890",
+        "Jaw width fixed (mm)": "500",
+        "Cutting edge length (mm)": "200",
+        "Closing force A (t)": "100",
+        "Closing force B (t)": "130",
+        "Closing force C (t)": "300"
+      },
+      {
+        "Jaw": "Z-Jaw",
+        "Excavator class (t)": "25-48",
+        "Oil pressure open/close (bar)": "350",
+        "Oil pressure rotation (bar)": "160",
+        "Oil flow open/close (l/min)": "200",
+        "Oil flow rotation (l/min)": "40",
+        "Open time (sec)": "1.5",
+        "Close time (sec)": "1.5",
+        "Total weight incl. jaw (kg)": "2740",
+        "Jaw weight (kg)": "1010",
+        "Length H (mm)": "2400",
+        "Width D (mm)": "1750",
+        "Jaw opening M (mm)": "440",
+        "Jaw width fixed (mm)": "120",
+        "Cutting edge length (mm)": "460",
+        "Closing force A (t)": "140",
+        "Closing force B (t)": "220",
+        "Closing force C (t)": "400"
+      }
+    ],
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Гідравлічні ножиці GSS",
+      "en": "Hydraulic shears GSS"
+    },
+    "category": "Экскаваторное навесное оборудование",
+    "url": "https://grabiron.prom.ua/p665838610-gidravlicheskie-nozhnitsy-gss.html",
+    "price": "Цену уточняйте",
+    "availability": "Под заказ",
+    "description": {
+      "uk": "Гідравлічні ножиці серії GSS. На сторінці наведена таблиця моделей (GSS 30/40/50/80) з розмірами, тиском, витратою масла та ріжучою здатністю.",
+      "en": "Hydraulic shears GSS series. The page provides a table of models (GSS 30/40/50/80) with dimensions, pressure, oil flow and cutting capacity."
+    },
+    "characteristics": {},
+    "variants": [
+      {
+        "Model": "GSS 30",
+        "Machine class (t)": "25-30",
+        "Weight (kg)": "3500",
+        "A (mm)": "3200",
+        "B (mm)": "1200",
+        "C (mm)": "520",
+        "D (mm)": "570",
+        "Moving part width (mm)": "120",
+        "Fixed part width (mm)": "400",
+        "Cutting force at tip (t)": "145",
+        "Oil pressure for cylinder (bar)": "320",
+        "Required oil flow (l/min)": "400",
+        "Round bar d (mm)": "70",
+        "Square bar (mm)": "60",
+        "I-beam (mm)": "420"
+      },
+      {
+        "Model": "GSS 40",
+        "Machine class (t)": "30-40",
+        "Weight (kg)": "4650",
+        "A (mm)": "3760",
+        "B (mm)": "1404",
+        "C (mm)": "550",
+        "D (mm)": "640",
+        "Moving part width (mm)": "120",
+        "Fixed part width (mm)": "400",
+        "Cutting force at tip (t)": "160",
+        "Oil pressure for cylinder (bar)": "320",
+        "Required oil flow (l/min)": "500",
+        "Round bar d (mm)": "85",
+        "Square bar (mm)": "70",
+        "I-beam (mm)": "480"
+      },
+      {
+        "Model": "GSS 50",
+        "Machine class (t)": "40-60",
+        "Weight (kg)": "6809",
+        "A (mm)": "4010",
+        "B (mm)": "1605",
+        "C (mm)": "802",
+        "D (mm)": "840",
+        "Moving part width (mm)": "150",
+        "Fixed part width (mm)": "470",
+        "Cutting force at tip (t)": "220",
+        "Oil pressure for cylinder (bar)": "350",
+        "Required oil flow (l/min)": "600",
+        "Round bar d (mm)": "110",
+        "Square bar (mm)": "85",
+        "I-beam (mm)": "540"
+      },
+      {
+        "Model": "GSS 80",
+        "Machine class (t)": "60-80",
+        "Weight (kg)": "8104",
+        "A (mm)": "4300",
+        "B (mm)": "1905",
+        "C (mm)": "883",
+        "D (mm)": "902",
+        "Moving part width (mm)": "150",
+        "Fixed part width (mm)": "150",
+        "Cutting force at tip (t)": "295",
+        "Oil pressure for cylinder (bar)": "350",
+        "Required oil flow (l/min)": "800",
+        "Round bar d (mm)": "130",
+        "Square bar (mm)": "110",
+        "I-beam (mm)": "620"
+      }
+    ],
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Мультипроцесор MS2100",
+      "en": "Multiprocessor MS2100"
+    },
+    "category": "Экскаваторное навесное оборудование",
+    "url": "https://grabiron.prom.ua/p1153094470-multiprotsessor-ms2100.html",
+    "price": "Цену уточняйте",
+    "availability": "Под заказ",
+    "description": {
+      "uk": "Мультипроцесор вагою 2100 кг для екскаваторів 20–50 т. Зміна щелеп однією людиною ~10 хвилин. Гарантія 1 рік. Вказані конструкційні особливості (підшипники, наплавлення зубів, сталь HB450 тощо).",
+      "en": "Multiprocessor weighing 2100 kg for excavators 20-50 t. Jaw change by one person ~10 minutes. 1 year warranty. Structural features specified (bearings, tooth overlay, HB450 steel, etc.)."
+    },
+    "characteristics": {
+      "Вес": "2100 кг",
+      "Экскаватор": "20–50 т",
+      "Смена челюстей": "1 человек ~10 минут",
+      "Гарантия": "12 мес",
+      "Тип ходовой экскаватора": "Гусеничные",
+      "Состояние": "Новое",
+      "Производитель": "ООО \"Грабирон\""
+    },
+    "variants": [],
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Ковші",
+      "en": "Buckets"
+    },
+    "category": "Ковши / навесное оборудование",
+    "url": "https://grabiron.prom.ua/p404951897-kovshi.html",
+    "price": "від 20 000 ₴",
+    "availability": "Під замовлення",
+    "description": {
+      "uk": "Компанія Грабірон виготовляє ковші для навантажувачів та екскаваторів вагою до 5 тонн.",
+      "en": "Grabiron company manufactures buckets for loaders and excavators weighing up to 5 tons."
+    },
+    "characteristics": {
+      "Для техники": "Погрузчики и экскаваторы до 5 т"
+    },
+    "variants": [],
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Швидкознім / швидкознімний механізм / перехідна плита",
+      "en": "Quick coupler / adapter plate"
+    },
+    "category": "Комплектующие / адаптеры",
+    "url": "https://grabiron.prom.ua/p404930558-bystrosem-bystrosemnyj-mehanizm.html",
+    "price": "від 55 000 ₴",
+    "availability": "Під замовлення",
+    "description": {
+      "uk": "Завод Grabiron виготовляє під замовлення перехідні плити та швидкознімні механізми (механічні та гідравлічні) за ТТХ замовника для гідромолотів, грейферів, ковшів, бетонодробарок. Для екскаваторів 12–90 т.",
+      "en": "Grabiron factory manufactures custom adapter plates and quick couplers (mechanical and hydraulic) according to customer specifications for hydraulic hammers, grapples, buckets, concrete crushers. For excavators 12-90 t."
+    },
+    "characteristics": {
+      "Экскаваторы": "12–90 т",
+      "Тип": "механический или гидравлический (под заказ)"
+    },
+    "variants": [],
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Відвал для снігу (гідроповорот) – 3000×1200×1000",
+      "en": "Snow blade (hydraulic rotation) – 3000×1200×1000"
+    },
+    "category": "Коммунальная техника / навесное",
+    "url": "https://grabiron.prom.ua/p1254251396-otval-dlya-snega.html",
+    "price": "83 000 ₴ (опт: 80 000 ₴ при заказе от 3 шт.)",
+    "availability": "Під замовлення",
+    "description": {
+      "uk": "Відвал з гідравлічним поворотом (3 положення: прямо/вправо/вліво), поворот лопати на 32°; є «плаваючий» механізм та захист гумовим краєм.",
+      "en": "Blade with hydraulic rotation (3 positions: straight/right/left), blade rotation 32°; floating mechanism and rubber edge protection."
+    },
+    "characteristics": {
+      "Размеры (Д/Ш/В)": "3000/1200/1000",
+      "Масса": "660 кг",
+      "Поворот": "32°",
+      "Положения": "3 (прямо/вправо/влево)"
+    },
+    "variants": [],
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Відвал універсальний (механічний або гідроповорот) – 3000×650×1020",
+      "en": "Universal blade (mechanical or hydraulic) – 3000×650×1020"
+    },
+    "category": "Коммунальная техника / навесное",
+    "url": "https://grabiron.prom.ua/p1254253970-otval-dlya-snega.html",
+    "price": "62 000 ₴",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Універсальний відвал (сніг, силос, пісок/грунт та інші сипучі). Адаптація під різні трактори/фронтальні навантажувачі.",
+      "en": "Universal blade (snow, silage, sand/soil and other bulk materials). Adaptation for various tractors/front loaders."
+    },
+    "characteristics": {
+      "Размеры (Д/Ш/В)": "3000/650/1020",
+      "Масса": "540 кг"
+    },
+    "variants": [],
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Коренерий пнів, дерев (4 модифікації)",
+      "en": "Stump and tree remover (4 configurations)"
+    },
+    "category": "Навесное для погрузчиков/тракторов",
+    "url": "https://grabiron.prom.ua/p1227835167-korchevatel-pnej-derevev.html",
+    "price": "65 000 ₴",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Коренерій для видалення дерев/пнів та коренів. Описані синхронізовані щелепи та захищений циліндр.",
+      "en": "Stump remover for removing trees/stumps and roots. Described synchronized jaws and protected cylinder."
+    },
+    "characteristics": {
+      "Страна производитель": "Украина"
+    },
+    "variants": [],
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Захват для бочок (на вила навантажувача)",
+      "en": "Barrel grab (for loader forks)"
+    },
+    "category": "Навесное для погрузчиков",
+    "url": "https://grabiron.prom.ua/p1254255262-zahvat-dlya-bochek.html",
+    "price": "Цену уточняйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Захват для утримання та транспортування стандартних металевих бочок на навантажувачах/штабелерах/річ-траках з вилами. Фіксація бочок відбувається автоматично при вставці між ребрами жорсткості.",
+      "en": "Grab for holding and transporting standard metal barrels on forklifts/stackers/reach trucks with forks. Barrel fixation occurs automatically when inserted between stiffening ribs."
+    },
+    "characteristics": {
+      "Совместимость": "Погрузчики/штабелеры/рич-траки с вилами (регулируемыми по ширине)"
+    },
+    "variants": [],
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Вила для навантажувача – Вили палетні 3в1 ISO 2 з гідрозахватом",
+      "en": "Loader forks – Pallet forks 3in1 ISO 2 with hydraulic grab"
+    },
+    "category": "Навесное для погрузчиков",
+    "url": "https://grabiron.prom.ua/p1254256896-vily-dlya-pogruzchika.html",
+    "price": "Цену уточняйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Комплект 3в1: палетні вила + вила для тюків + захват колод (гідрозахват). Згадується застосування для міні/телескопічних/фронтальних/вилочних навантажувачів та тракторів.",
+      "en": "3in1 kit: pallet forks + bale forks + log grab (hydraulic). Mentioned for use with mini/telescopic/front/forklift loaders and tractors."
+    },
+    "characteristics": {
+      "Стандарт": "ISO 2",
+      "Функции": "палеты / тюки / колоды"
+    },
+    "variants": [],
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Бетонодробарка / ножиці по бетону / мультипроцесор (загальний опис)",
+      "en": "Concrete crusher / concrete shears / multiprocessor (general description)"
+    },
+    "category": "Экскаваторное навесное оборудование",
+    "url": "https://grabiron.prom.ua/p1635819887-betonokroshitel-nozhnitsy-betonu.html",
+    "price": "Цену уточняйте",
+    "availability": "Під замовлення",
+    "description": {
+      "uk": "Мультипроцесор-бетонодробарка для руйнування залізобетонних споруд (первинний демонтаж та вторинне подрібнення).",
+      "en": "Multiprocessor concrete crusher for demolition of reinforced concrete structures (primary demolition and secondary crushing)."
+    },
+    "characteristics": {},
+    "variants": [],
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Гідроножиці CS 2500",
+      "en": "Hydraulic shears CS 2500"
+    },
+    "category": "Экскаваторное навесное оборудование",
+    "url": "https://grabiron.prom.ua/p2409999618-gidronozhnitsy-2500.html",
+    "price": "Цену уточняйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Гідроножиці моделі CS 2500 (на сторінці у видимій частині — ціна/наявність, фото).",
+      "en": "Hydraulic shears model CS 2500 (price/availability, photo shown on the page)."
+    },
+    "characteristics": {},
+    "variants": [],
+    "source_notes": ""
+  }
+]

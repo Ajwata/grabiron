@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Товар | GrabIron</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <style>
+    .product-detail-hero {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      padding: 2rem 0;
+      color: white;
+    }
+    
+    .breadcrumb {
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      opacity: 0.8;
+    }
+    
+    .breadcrumb a {
+      color: #ff6600;
+      text-decoration: none;
+    }
+    
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+    
+    .product-detail-container {
+      padding: 3rem 0;
+    }
+    
+    .product-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    
+    @media (max-width: 768px) {
+      .product-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+    
+    .product-image-section {
+      background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+      border: 3px solid #ff6600;
+      padding: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+      font-size: 1rem;
+      color: #6b7280;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    
+    .product-image-section .placeholder {
+      font-size: 1rem;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .product-info-section h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #1a1a1a;
+    }
+    
+    .product-category-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #dbeafe;
+      color: #ff6600;
+      border: 2px solid #ff6600;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+    
+    .product-description {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #374151;
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: #f9fafb;
+      border-left: 4px solid #ff6600;
+    }
+    
+    .product-meta {
+      display: flex;
+      gap: 2rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+    
+    .meta-item {
+      flex: 1;
+      min-width: 200px;
+      padding: 1.5rem;
+      background: white;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+    }
+    
+    .meta-label {
+      font-size: 0.85rem;
+      color: #999;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    
+    .meta-value {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+    
+    .meta-value.price {
+      color: #ff6600;
+    }
+    
+    .meta-value.in-stock {
+      color: #28a745;
+    }
+    
+    .meta-value.on-order {
+      color: #ffc107;
+    }
+    
+    .product-contact-info {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: #f8f9fa;
+      border: 1px solid #e0e0e0;
+      border-left: 4px solid #ff6600;
+    }
+    
+    .product-contact-info h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: #1a1a1a;
+    }
+    
+    .product-contact-info p {
+      margin: 0.5rem 0;
+      color: #666;
+      font-size: 1rem;
+    }
+    
+    .product-contact-info .btn-large {
+      margin-top: 1rem;
+    }
+    
+    .btn-large {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s;
+      border: 2px solid #1a1a1a;
+    }
+    
+    .btn-primary {
+      background: #ff6600;
+      color: white;
+      border-color: #ff6600;
+    }
+    
+    .btn-primary:hover {
+      background: #e65c00;
+      border-color: #e65c00;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 6px rgba(30, 58, 138, 0.3);
+    }
+    
+    .btn-secondary {
+      background: white;
+      color: #ff6600;
+      border: 2px solid #ff6600;
+    }
+    
+    .btn-secondary:hover {
+      background: #ff6600;
+      color: white;
+    }
+    
+    .characteristics-section {
+      margin: 3rem 0;
+    }
+    
+    .section-title {
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+      color: #1a1a1a;
+      border-bottom: 3px solid #ff6600;
+      padding-bottom: 0.5rem;
+    }
+    
+    .characteristics-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    .characteristics-table tr {
+      border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .characteristics-table tr:last-child {
+      border-bottom: none;
+    }
+    
+    .characteristics-table td {
+      padding: 1rem 1.5rem;
+    }
+    
+    .characteristics-table td:first-child {
+      font-weight: 600;
+      color: #555;
+      width: 40%;
+      background: #f9f9f9;
+    }
+    
+    .characteristics-table td:last-child {
+      color: #1a1a1a;
+    }
+    
+    .variants-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .variant-card {
+      background: white;
+      border: 2px solid #e0e0e0;
+
+      padding: 1.5rem;
+      transition: all 0.3s;
+    }
+    
+    .variant-card:hover {
+      border-color: #ff6600;
+      box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+      transform: translateY(-2px);
+    }
+    
+    .variant-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ff6600;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 0.5rem;
+    }
+    
+    .variant-specs {
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+    
+    .variant-specs div {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .variant-specs div:last-child {
+      border-bottom: none;
+    }
+    
+    .variant-specs .label {
+      color: #666;
+    }
+    
+    .variant-specs .value {
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+    
+    .loading {
+      text-align: center;
+      padding: 4rem 0;
+      font-size: 1.2rem;
+      color: #999;
+    }
+    
+    .error-message {
+      text-align: center;
+      padding: 4rem 0;
+    }
+    
+    .error-message h2 {
+      color: #dc3545;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo"><img src="../assets/img/logo.png" alt="GrabIron" style="height: 50px;"></a>
+      
+      <nav class="main-nav">
+        <ul>
+          <li><a href="/" data-i18n="home">Home</a></li>
+          <li><a href="/products/catalog.html" data-i18n="catalog">Catalog</a></li>
+          <li><a href="/about.html" data-i18n="about">About</a></li>
+          <li><a href="/service.html" data-i18n="service">Service</a></li>
+          <li><a href="/contact.html" data-i18n="contact">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-right">
+        <div class="language-switcher">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="uk">УКР</button>
+        </div>
+        
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span>☰</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Product Detail Hero -->
+  <section class="product-detail-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/" data-i18n="home">Home</a> / 
+        <a href="/products/catalog.html" data-i18n="catalog">Catalog</a> / 
+        <span id="breadcrumb-product"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Content -->
+  <section class="product-detail-container">
+    <div class="container">
+      <div id="product-content">
+        <div class="loading"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>GrabIron Attachments</h3>
+          <p data-i18n="footerDesc">Premium excavator and skid steer attachments engineered for the toughest jobs. Built to last, designed to perform.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3 data-i18n="quickLinks">Quick Links</h3>
+          <ul>
+            <li><a href="/" data-i18n="home">Home</a></li>
+            <li><a href="/products/" data-i18n="products">Products</a></li>
+            <li><a href="/about.html" data-i18n="about">About Us</a></li>
+            <li><a href="/service.html" data-i18n="service">Service & Support</a></li>
+            <li><a href="/downloads.html" data-i18n="downloads">Downloads</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3 data-i18n="products">Products</h3>
+          <ul>
+            <li><a href="/products/?category=demolition" data-i18n="demolition">Demolition</a></li>
+            <li><a href="/products/?category=grabs-handling" data-i18n="grabs-handling">Grabs & Handling</a></li>
+            <li><a href="/products/?category=quick-couplers" data-i18n="quick-couplers">Quick Couplers</a></li>
+            <li><a href="/products/?category=other-attachments" data-i18n="other-attachments">Other Attachments</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3 data-i18n="contact">Contact</h3>
+          <p><span data-i18n="email">Email</span>: info@grabiron.com<br>
+          <span data-i18n="phone">Phone</span>: +1 (555) 123-4567<br>
+          Mon-Fri: 8:00 AM - 6:00 PM</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 GrabIron Attachments. <span data-i18n="allRightsReserved">All rights reserved</span>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { fetchProducts } from '../js/api.js';
+    import { initLangSwitcher, t, getCurrentLang } from '../js/lang.js';
+    import { initAnimations } from '../js/animations.js';
+    
+    // Initialize language switcher and animations
+    initLangSwitcher();
+    initAnimations();
+    
+    // Get product ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+    
+    if (!productId) {
+      showError(t('noResults'), t('noResultsDesc'));
+    } else {
+      loadProduct(productId);
+    }
+    
+    // Listen for language changes and reload product
+    window.addEventListener('languageChanged', () => {
+      if (productId) {
+        loadProduct(productId);
+      }
+    });
+    
+    async function loadProduct(id) {
+      try {
+        document.getElementById('product-content').innerHTML = `<div class="loading">${t('loading')}</div>`;
+        
+        const products = await fetchProducts();
+        console.log('All products:', products);
+        console.log('Looking for id:', id);
+        
+        const product = products.find(p => {
+          // Create ID from Ukrainian name for stable URLs
+          const ukName = typeof p.nameUk === 'string' ? p.nameUk : 
+                        (p.nameUk ? p.nameUk : p.name);
+          const productId = ukName.toLowerCase().replace(/[^a-z0-9а-яіїєґ]+/g, '-');
+          console.log('Checking product:', ukName, '-> id:', productId, 'vs', id);
+          return productId === id;
+        });
+        
+        console.log('Found product:', product);
+        
+        if (!product) {
+          showError(t('noResults'), t('noResultsDesc'));
+          return;
+        }
+        
+        renderProduct(product);
+      } catch (error) {
+        console.error('Error loading product:', error);
+        showError(t('loading'), t('noResultsDesc'));
+      }
+    }
+    
+    // Helper functions for translation
+    function translatePrice(price) {
+      if (!price) return '';
+      const lower = price.toLowerCase();
+      if (lower.includes('уточня') || lower.includes('уточняйте') || lower.includes('уточнюйте')) {
+        return t('priceOnRequest');
+      }
+      return t(price) || price;
+    }
+    
+    function translateAvailability(availability) {
+      if (!availability) return '';
+      const lower = availability.toLowerCase();
+      if (lower.includes('наличии') || lower.includes('наявності') || lower.includes('stock')) {
+        return t('inStock');
+      }
+      if (lower.includes('заказ') || lower.includes('замовлення') || lower.includes('order')) {
+        return t('onOrder');
+      }
+      return t(availability) || availability;
+    }
+    
+    function renderProduct(product) {
+      document.getElementById('page-title').textContent = `${product.name} | GrabIron`;
+      document.getElementById('breadcrumb-product').textContent = product.name;
+      
+      const categoryName = getCategoryDisplayName(product.category);
+      const categoryIcon = getCategoryIcon(product.category);
+      const carrierWeight = extractCarrierWeight(product);
+      
+      const html = `
+        <div class="product-layout">
+          <div class="product-image-section">
+            <span class="placeholder">${t('photo')}</span>
+          </div>
+          
+          <div class="product-info-section">
+            <div class="product-category-badge">${categoryName}</div>
+            <h1>${product.name}</h1>
+            
+            <div class="product-meta">
+              <div class="meta-item">
+                <div class="meta-label">${t('price')}</div>
+                <div class="meta-value price">${translatePrice(product.price)}</div>
+              </div>
+              <div class="meta-item">
+                <div class="meta-label">${t('availability')}</div>
+                <div class="meta-value in-stock">
+                  ${translateAvailability(product.availability)}
+                </div>
+              </div>
+              ${carrierWeight !== 'N/A' ? `
+              <div class="meta-item">
+                <div class="meta-label">${t('carrier')}</div>
+                <div class="meta-value">${carrierWeight}</div>
+              </div>
+              ` : ''}
+            </div>
+            
+            <div class="product-description">
+              ${product.description}
+            </div>
+            
+            <div class="product-contact-info">
+              <h3>${t('contactUsTitle')}</h3>
+              <p>${t('email')}: info@grabiron.com</p>
+              <p>${t('phone')}: +1 (555) 123-4567</p>
+              <a href="/contact.html" class="btn-large btn-primary">${t('contactUs')}</a>
+            </div>
+          </div>
+        </div>
+        
+        ${Object.keys(product.characteristics || {}).length > 0 ? `
+        <div class="characteristics-section">
+          <h2 class="section-title">${t('characteristics')}</h2>
+          <table class="characteristics-table">
+            ${Object.entries(product.characteristics).map(([key, value]) => `
+              <tr>
+                <td>${t(key) || key}</td>
+                <td>${t(value) || value}</td>
+              </tr>
+            `).join('')}
+          </table>
+        </div>
+        ` : ''}
+        
+        ${product.variants && product.variants.length > 0 ? `
+        <div class="characteristics-section">
+          <h2 class="section-title">${t('variantsAvailable')} (${product.variants.length})</h2>
+          <div class="variants-grid">
+            ${product.variants.map(variant => {
+              const variantName = variant['Model'] || variant['Модель'] || variant['Jaw'] || t('variants');
+              return `
+                <div class="variant-card">
+                  <div class="variant-title">${variantName}</div>
+                  <div class="variant-specs">
+                    ${Object.entries(variant).map(([key, value]) => `
+                      <div>
+                        <span class="label">${t(key) || key}</span>
+                        <span class="value">${value}</span>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        </div>
+        ` : ''}
+        
+        <div style="text-align: center; margin: 3rem 0;">
+          <a href="/products/catalog.html" class="btn-large btn-secondary">
+            ← ${t('backToCatalog')}
+          </a>
+        </div>
+      `;
+      
+      document.getElementById('product-content').innerHTML = html;
+    }
+    
+    function showError(title, message) {
+      document.getElementById('product-content').innerHTML = `
+        <div class="error-message">
+          <h2>${title}</h2>
+          <p>${message}</p>
+          <a href="/products/catalog.html" class="btn-large btn-primary" style="margin-top: 2rem; display: inline-flex;">
+            ${t('viewCatalog')}
+          </a>
+        </div>
+      `;
+    }
+    
+    function getCategoryDisplayName(category) {
+      // Map Russian categories to translation keys
+      const categoryTranslationMap = {
+        'Экскаваторное навесное оборудование': 'categoryExcavator',
+        'Ковши / навесное оборудование': 'categoryBuckets',
+        'Комплектующие / адаптеры': 'categoryComponents',
+        'Коммунальная техника / навесное': 'categoryMunicipal',
+        'Навесное для погрузчиков/тракторов': 'categoryLoaders',
+        'Навесное для погрузчиков': 'categoryLoaders'
+      };
+      
+      // First check exact match
+      if (categoryTranslationMap[category]) {
+        return t(categoryTranslationMap[category]);
+      }
+      
+      // Fallback to partial matching
+      const lowerCat = category.toLowerCase();
+      if (lowerCat.includes('экскаватор')) {
+        return t('categoryExcavator');
+      } else if (lowerCat.includes('ковш') || lowerCat.includes('bucket')) {
+        return t('categoryBuckets');
+      } else if (lowerCat.includes('адаптер') || lowerCat.includes('adapter') || lowerCat.includes('комплектующие')) {
+        return t('categoryComponents');
+      } else if (lowerCat.includes('комунальн') || lowerCat.includes('municipal') || lowerCat.includes('погрузчик')) {
+        return t('categoryMunicipal');
+      }
+      
+      return category;
+    }
+    
+    function getCategoryIcon(category) {
+      const icons = {
+        'Экскаваторное навесное оборудование': '⚙️',
+        'Ковши / навесное оборудование': '🪣',
+        'Комплектующие / адаптеры': '🔗',
+        'Коммунальная техника / навесное': '🚜',
+        'Навесное для погрузчиков/тракторов': '🏗️',
+        'Навесное для погрузчиков': '🏗️'
+      };
+      return icons[category] || '🔧';
+    }
+    
+    function extractCarrierWeight(product) {
+      const chars = product.characteristics || {};
+      return chars['Excavator class'] || 
+             chars['Machine class (t)'] || 
+             chars['Класс машин (t)'] ||
+             chars['Экскаватор'] || 
+             'N/A';
+    }
+  </script>
+  
+  <script type="module" src="../js/main.js"></script>
+  <script type="module" src="../js/animations.js"></script>
+
+</body>
+</html>
