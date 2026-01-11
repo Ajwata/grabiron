@@ -31,7 +31,9 @@ export async function fetchProducts() {
   }
   
   try {
-    const response = await fetch('/data/products_i18n.json');
+    // Определяем правильный путь в зависимости от текущей страницы
+    const basePath = window.location.pathname.includes('/products/') ? '../data/products_i18n.json' : './data/products_i18n.json';
+    const response = await fetch(basePath);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
