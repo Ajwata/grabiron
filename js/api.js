@@ -1,5 +1,5 @@
 // API module for fetching and caching product data
-import { getCurrentLang } from '/js/lang.js';
+import { getCurrentLang } from './lang.js';
 
 let productsCache = null;
 let transformedCache = null;
