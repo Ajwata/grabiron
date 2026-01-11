@@ -1,0 +1,14 @@
+{
+  "name": "grabiron-website",
+  "version": "1.0.0",
+  "description": "Grabiron company website with product catalog",
+  "scripts": {
+    "fetch-images": "node scripts/fetch-product-images.js"
+  },
+  "keywords": ["grabiron", "excavator", "equipment"],
+  "author": "Grabiron",
+  "license": "ISC",
+  "dependencies": {
+    "jsdom": "^23.0.0"
+  }
+}
