@@ -50,20 +50,22 @@
     .product-image-section {
       background: #ffffff;
       border: 3px solid #ff6600;
-      padding: 3rem;
+      padding: 2rem;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
       min-height: 400px;
-      font-size: 1rem;
-      color: #6b7280;
-      font-weight: 300;
-      text-transform: uppercase;
-      letter-spacing: 3px;
       overflow: hidden;
     }
     
-    .product-image-section img {
+    .product-main-image {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    
+    .product-main-image img {
       width: 100%;
       height: 100%;
       max-height: 500px;
@@ -71,8 +73,44 @@
       transition: transform 0.3s ease;
     }
     
-    .product-image-section:hover img {
+    .product-main-image:hover img {
       transform: scale(1.05);
+    }
+    
+    .product-gallery-thumbs {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      gap: 0.5rem;
+      max-height: 200px;
+      overflow-y: auto;
+      padding: 0.5rem 0;
+    }
+    
+    .gallery-thumb {
+      aspect-ratio: 1;
+      cursor: pointer;
+      border: 2px solid #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+      background: white;
+      transition: all 0.3s ease;
+      padding: 0.25rem;
+    }
+    
+    .gallery-thumb:hover {
+      border-color: #ff8533;
+      transform: scale(1.05);
+    }
+    
+    .gallery-thumb.active {
+      border-color: #ff6600;
+      box-shadow: 0 0 0 2px rgba(255, 102, 0, 0.2);
+    }
+    
+    .gallery-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
     
     .product-image-section .placeholder {
@@ -327,6 +365,147 @@
       color: #dc3545;
       margin-bottom: 1rem;
     }
+
+    /* Product Specifications Images Gallery */
+    .product-specs-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .spec-image-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: white;
+    }
+
+    .spec-image-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .spec-image-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .spec-image-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      color: white;
+      padding: 1rem;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .spec-image-card:hover .spec-image-overlay {
+      transform: translateY(0);
+    }
+
+    .spec-image-overlay p {
+      margin: 0;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    /* Lightbox Styles */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+      padding: 2rem;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 95%;
+      max-height: 95%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 95vh;
+      object-fit: contain;
+      box-shadow: 0 0 50px rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      background: #ff6600;
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .lightbox-close:hover {
+      background: #ff8533;
+      transform: rotate(90deg);
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 102, 0, 0.8);
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .lightbox-nav:hover {
+      background: #ff6600;
+    }
+
+    .lightbox-prev {
+      left: 20px;
+    }
+
+    .lightbox-next {
+      right: 20px;
+    }
   </style>
 </head>
 <body>
@@ -510,14 +689,29 @@
       const categoryIcon = getCategoryIcon(product.category);
       const carrierWeight = extractCarrierWeight(product);
       
+      // Get images array or fallback to single image
+      const images = product.images || [];
+      const mainImage = images.length > 0 ? images[0] : (product.image || '');
+      
       const html = `
         <div class="product-layout">
           <div class="product-image-section">
-            ${product.image ? 
-              `<img src="${product.image}" alt="${product.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-               <span class="placeholder" style="display:none;">${t('photo')}</span>` :
-              `<span class="placeholder">${t('photo')}</span>`
-            }
+            <div class="product-main-image">
+              ${mainImage ? 
+                `<img id="main-product-image" src="${mainImage}" alt="${product.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                 <span class="placeholder" style="display:none;">${t('photo')}</span>` :
+                `<span class="placeholder">${t('photo')}</span>`
+              }
+            </div>
+            ${images.length > 1 ? `
+              <div class="product-gallery-thumbs">
+                ${images.map((img, index) => `
+                  <div class="gallery-thumb ${index === 0 ? 'active' : ''}" data-image="${img}">
+                    <img src="${img}" alt="${product.name} - ${index + 1}">
+                  </div>
+                `).join('')}
+              </div>
+            ` : ''}
           </div>
           
           <div class="product-info-section">
@@ -571,9 +765,9 @@
         ` : ''}
         
         ${product.variants && product.variants.length > 0 ? `
-        <div class="characteristics-section">
-          <h2 class="section-title">${t('variantsAvailable')} (${product.variants.length})</h2>
-          <div class="variants-grid">
+        <div class="characteristics-section" id="variants-section">
+          <h2 class="section-title" id="variants-title">${t('variantsAvailable')} (${product.variants.length})</h2>
+          <div class="variants-grid" id="variants-container">
             ${product.variants.map(variant => {
               const variantName = variant['Model'] || variant['Модель'] || variant['Jaw'] || t('variants');
               return `
@@ -594,6 +788,11 @@
         </div>
         ` : ''}
         
+        <div class="characteristics-section" id="specs-images-wrapper">
+          <h2 class="section-title" id="specs-title" style="display: none;">${t('specificationsAndDimensions') || 'Specifications & Dimensions'}</h2>
+          <div id="specs-images-section"></div>
+        </div>
+        
         <div style="text-align: center; margin: 3rem 0;">
           <a href="catalog.html" class="btn-large btn-secondary">
             ← ${t('backToCatalog')}
@@ -602,6 +801,241 @@
       `;
       
       document.getElementById('product-content').innerHTML = html;
+      
+      // Add click handlers for gallery thumbnails
+      if (images.length > 1) {
+        const mainImageEl = document.getElementById('main-product-image');
+        document.querySelectorAll('.gallery-thumb').forEach(thumb => {
+          thumb.addEventListener('click', function() {
+            const imageSrc = this.getAttribute('data-image');
+            if (mainImageEl) {
+              mainImageEl.src = imageSrc;
+            }
+            
+            // Update active state
+            document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+          });
+        });
+      }
+      
+      // Check if product has info images - show them regardless of variants
+      const specsTitle = document.getElementById('specs-title');
+      const specsSection = document.getElementById('specs-images-section');
+      const variantsSection = document.getElementById('variants-section');
+      
+      if (specsTitle && specsSection) {
+        // Get spec images based on product name
+        const specImages = getProductInfoImages(product.name);
+        
+        if (specImages.length > 0) {
+          // Show title
+          specsTitle.style.display = 'block';
+          
+          // Hide variants section if it exists and we have spec images
+          if (variantsSection) {
+            variantsSection.style.display = 'none';
+          }
+          
+          // Show spec images
+          specsSection.innerHTML = `
+            <div class="product-specs-images">
+              ${specImages.map((imgSrc, index) => `
+                <div class="spec-image-card" data-image-index="${index}">
+                  <img src="${imgSrc}" alt="${product.name} - Specification ${index + 1}">
+                  <div class="spec-image-overlay">
+                    <p>${t('clickToEnlarge') || 'Click to enlarge'}</p>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          `;
+          
+          // Setup lightbox
+          setupSpecImagesLightbox(specImages);
+        }
+      }
+    }
+    
+    function getProductInfoImages(productName) {
+      const nameLower = productName.toLowerCase();
+      const images = [];
+      const basePath = '../assets/img/info/';
+      
+      console.log('=== SEARCHING IMAGES ===');
+      console.log('Product name:', productName);
+      console.log('Name lowercase:', nameLower);
+      
+      // Map product names to their info images (only existing files)
+      const productImageMap = {
+        'земляний бур': ['auger drive.png', 'auger drive2.png'],
+        'earth auger': ['auger drive.png', 'auger drive2.png'],
+        'бур': ['auger drive.png', 'auger drive2.png'],
+        
+        'гідравлічний молот': ['Hydraulic Breaker2.png'],
+        'hydraulic breaker': ['Hydraulic Breaker2.png'],
+        'breaker': ['Hydraulic Breaker2.png'],
+        
+        'стаціонарний пульверизатор': ['Fixed Pulverizer.png', 'Fixed Pulverizer2.png'],
+        'fixed pulverizer': ['Fixed Pulverizer.png', 'Fixed Pulverizer2.png'],
+        
+        'ротаційний пульверизатор': ['Rotation Pulverizer.png'],
+        'rotation pulverizer': ['Rotation Pulverizer.png'],
+        
+        'дробарка ковш': ['Crusher Bucket.png'],
+        'crusher bucket': ['Crusher Bucket.png'],
+        
+        'гідравлічний дробарка': ['Hydraulic Crusher.png'],
+        'hydraulic crusher': ['Hydraulic Crusher.png'],
+        'crusher': ['Hydraulic Crusher.png'],
+        
+        'гідравлічний компактор': ['Hydraulic Compactor2.png'],
+        'hydraulic compactor': ['Hydraulic Compactor2.png'],
+        'compactor': ['Hydraulic Compactor2.png'],
+        
+        'барабанний різак': ['Drum Cutter.png'],
+        'drum cutter': ['Drum Cutter.png'],
+        
+        'демонтажний грейфер': ['Log Grab2.png'],
+        'demolition grapple': ['Log Grab2.png'],
+        
+        'грейфер для колод': ['Log Grab3.png'],
+        'log grab': ['Log Grab3.png'],
+        
+        'ковш-затискач': ['Log Grab4.png'],
+        'clamp bucket': ['Log Grab4.png'],
+        
+        'міксер ковш': ['Mixer Bucket2.png'],
+        'mixer bucket': ['Mixer Bucket2.png'],
+        
+        'пеньковий фрезер': ['Stump Planer.png'],
+        'stump planer': ['Stump Planer.png'],
+        'корчеватель': ['Stump Planer.png'],
+        'splitter cone': ['Stump Planer.png'],
+        'конус': ['Stump Planer.png'],
+        
+        'забійник паль': ['Plie driver 2.png'],
+        'pile driver': ['Plie driver 2.png'],
+        'pile cutter': ['Plie driver 2.png'],
+        'сваерезка': ['Plie driver 2.png'],
+        
+        'швидкозмінний пристрій': ['Quick hitch.png'],
+        'quick hitch': ['Quick hitch.png'],
+        'quick coupler': ['Quick hitch.png'],
+        'быстросъем': ['Quick hitch.png'],
+        
+        'гідроножиці': ['Eagle Shear.png'],
+        'eagle shear': ['Eagle Shear.png'],
+        'scrap shear': ['Eagle Shear.png'],
+        'ножницы': ['Eagle Shear.png'],
+        
+        'мультипроцессор': ['Pulverizer.png'],
+        'multiprocessor': ['Pulverizer.png'],
+        
+        'сортировочный грейфер': ['Log Grab2.png', 'Log Grab3.png'],
+        'sort grapple': ['Log Grab2.png', 'Log Grab3.png'],
+        
+        'грейфер для металлолома': ['Log Grab2.png'],
+        'scrap grapple': ['Log Grab2.png'],
+        
+        'бетонокрошитель': ['Pulverizer.png', 'Crusher Bucket.png'],
+        'concrete crusher': ['Pulverizer.png', 'Crusher Bucket.png'],
+        
+        'вібраційний рихлитель': ['vibro ripper.png'],
+        'vibro ripper': ['vibro ripper.png'],
+        'рихлитель': ['vibro ripper.png'],
+        'ripper': ['vibro ripper.png'],
+        'vibratory ripper': ['vibro ripper.png'],
+        
+        'земснаряд': ['Dredging pump.png'],
+        'dredging pump': ['Dredging pump.png']
+      };
+      
+      // Find matching images
+      for (const [key, fileNames] of Object.entries(productImageMap)) {
+        if (nameLower.includes(key)) {
+          console.log('Match found for key:', key);
+          fileNames.forEach(fileName => {
+            const fullPath = basePath + fileName;
+            images.push(fullPath);
+            console.log('Added image:', fullPath);
+          });
+          break; // Use first match
+        }
+      }
+      
+      console.log('Final images array:', images);
+      return images;
+    }
+    
+    function setupSpecImagesLightbox(images) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = document.getElementById('lightbox-image');
+      const closeBtn = lightbox.querySelector('.lightbox-close');
+      const prevBtn = lightbox.querySelector('.lightbox-prev');
+      const nextBtn = lightbox.querySelector('.lightbox-next');
+      
+      let currentImageIndex = 0;
+      
+      function showImage(index) {
+        currentImageIndex = index;
+        lightboxImage.src = images[index];
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      
+      function showNext() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        lightboxImage.src = images[currentImageIndex];
+      }
+      
+      function showPrev() {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        lightboxImage.src = images[currentImageIndex];
+      }
+      
+      // Add click handlers to spec image cards
+      document.querySelectorAll('.spec-image-card').forEach(card => {
+        card.addEventListener('click', function() {
+          const index = parseInt(this.getAttribute('data-image-index'));
+          showImage(index);
+        });
+      });
+      
+      closeBtn.addEventListener('click', closeLightbox);
+      
+      if (images.length > 1) {
+        prevBtn.addEventListener('click', showPrev);
+        nextBtn.addEventListener('click', showNext);
+        prevBtn.style.display = 'flex';
+        nextBtn.style.display = 'flex';
+      } else {
+        prevBtn.style.display = 'none';
+        nextBtn.style.display = 'none';
+      }
+      
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+      
+      document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('active')) return;
+        
+        if (e.key === 'Escape') {
+          closeLightbox();
+        } else if (e.key === 'ArrowRight' && images.length > 1) {
+          showNext();
+        } else if (e.key === 'ArrowLeft' && images.length > 1) {
+          showPrev();
+        }
+      });
     }
     
     function showError(title, message) {
@@ -669,6 +1103,16 @@
     }
   </script>
   
+  <!-- Lightbox for full-screen images -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" aria-label="Close">&times;</button>
+      <button class="lightbox-nav lightbox-prev" aria-label="Previous">&lsaquo;</button>
+      <img id="lightbox-image" src="" alt="">
+      <button class="lightbox-nav lightbox-next" aria-label="Next">&rsaquo;</button>
+    </div>
+  </div>
+
   <script type="module" src="../js/main.js"></script>
   <script type="module" src="../js/animations.js"></script>
 

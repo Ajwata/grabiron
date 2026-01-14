@@ -86,11 +86,12 @@ function renderCategory(category) {
                 ${subcategory.products.slice(0, 4).map(product => {
                   const productName = lang === 'uk' ? (product.nameUk || product.name) : product.name;
                   const productDesc = lang === 'uk' ? (product.descriptionUk || product.description) : product.description;
+                  const productImage = (product.images && product.images.length > 0) ? product.images[0] : (product.image || '/assets/img/product-placeholder.svg');
                   
                   return `
                     <div class="product-card">
                       <div class="product-image">
-                        <img src="${product.image || '/assets/img/product-placeholder.svg'}" alt="${productName}">
+                        <img src="${productImage}" alt="${productName}">
                       </div>
                       <div class="product-info">
                         <h3>${productName}</h3>
@@ -149,11 +150,12 @@ function renderSubcategory(category, subcategory) {
         ${subcategory.products.map(product => {
           const productName = lang === 'uk' ? (product.nameUk || product.name) : product.name;
           const productDesc = lang === 'uk' ? (product.descriptionUk || product.description) : product.description;
+          const productImage = (product.images && product.images.length > 0) ? product.images[0] : (product.image || '/assets/img/product-placeholder.svg');
           
           return `
             <div class="product-card">
               <div class="product-image">
-                <img src="${product.image || '/assets/img/product-placeholder.svg'}" alt="${productName}">
+                <img src="${productImage}" alt="${productName}">
               </div>
               <div class="product-info">
                 <h3>${productName}</h3>

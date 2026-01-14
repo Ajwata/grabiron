@@ -631,6 +631,7 @@
             availability: product.availability,
             url: product.url,
             image: product.image,
+            images: product.images,
             characteristics: product.characteristics,
             variants: product.variants
           };
@@ -714,11 +715,12 @@
         const categoryName = getCategoryDisplayName(product.category);
         const carrierWeight = extractCarrierWeight(product);
         const variantsCount = product.variants?.length || 0;
+        const productImage = (product.images && product.images.length > 0) ? product.images[0] : (product.image || '../assets/img/product-placeholder.svg');
         
         return `
           <div class="product-card">
             <div class="product-image">
-              <img src="${product.image || '../assets/img/product-placeholder.svg'}" 
+              <img src="${productImage}" 
                    alt="${product.name}" 
                    onerror="this.src='../assets/img/product-placeholder.svg'">
             </div>

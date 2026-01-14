@@ -52,8 +52,16 @@ function renderProduct(category, subcategory, product) {
   document.getElementById('product-model').textContent = `Model: ${product.model}`;
   document.getElementById('product-carrier').textContent = `${product.carrierWeightT} ${t('tons')}`;
   document.getElementById('product-description').textContent = productDesc;
-  document.getElementById('product-image').src = product.image || '/assets/img/product-placeholder.svg';
-  document.getElementById('product-image').alt = productName;
+  
+  // Set main image
+  const mainImage = document.getElementById('product-image');
+  const images = product.images || [];
+  const mainImageSrc = images.length > 0 ? images[0] : (product.image || '/assets/img/product-placeholder.svg');
+  mainImage.src = mainImageSrc;
+  mainImage.alt = productName;
+  
+  // Render image gallery if multiple images exist
+  renderImageGallery(product, productName);
   
   // Update page title
   document.title = `${productName} | GrabIron Attachments`;
@@ -69,6 +77,37 @@ function renderProduct(category, subcategory, product) {
   
   // Render related products
   renderRelatedProducts(category, subcategory, product);
+}
+
+// Render image gallery
+function renderImageGallery(product, productName) {
+  const galleryContainer = document.getElementById('product-gallery');
+  const images = product.images || [];
+  
+  if (images.length <= 1) {
+    galleryContainer.innerHTML = '';
+    return;
+  }
+  
+  const mainImage = document.getElementById('product-image');
+  
+  galleryContainer.innerHTML = images.map((img, index) => `
+    <div class="gallery-thumb ${index === 0 ? 'active' : ''}" data-image="${img}">
+      <img src="${img}" alt="${productName} - Image ${index + 1}">
+    </div>
+  `).join('');
+  
+  // Add click handlers for thumbnails
+  galleryContainer.querySelectorAll('.gallery-thumb').forEach(thumb => {
+    thumb.addEventListener('click', function() {
+      const imageSrc = this.getAttribute('data-image');
+      mainImage.src = imageSrc;
+      
+      // Update active state
+      galleryContainer.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
 }
 
 // Render features list
@@ -90,6 +129,44 @@ function renderSpecifications(product) {
   const lang = getCurrentLanguage();
   const specs = lang === 'uk' ? (product.specificationsUk || product.specifications) : product.specifications;
   const table = document.getElementById('specs-table').querySelector('tbody');
+  
+  // Check if this is Earth Auger product - show images instead of specs table
+  const productName = lang === 'uk' ? (product.nameUk || product.name) : product.name;
+  const isEarthAuger = productName.toLowerCase().includes('earth auger') || 
+                       productName.toLowerCase().includes('земляний бур');
+  
+  if (isEarthAuger) {
+    // Hide the specs table and show images instead
+    const specsSection = table.closest('.product-section');
+    const specsTitle = specsSection.querySelector('h2');
+    specsTitle.textContent = lang === 'uk' ? 'Специфікації та розміри' : 'Specifications & Dimensions';
+    
+    // Create image gallery for specs
+    const imagesContainer = document.createElement('div');
+    imagesContainer.className = 'product-specs-images';
+    imagesContainer.id = 'specs-images-gallery';
+    
+    const specImages = [
+      '../assets/img/Earth auger/auger drive.png',
+      '../assets/img/Earth auger/auger drive2.png'
+    ];
+    
+    imagesContainer.innerHTML = specImages.map((imgSrc, index) => `
+      <div class="spec-image-card" data-image-index="${index}">
+        <img src="${imgSrc}" alt="${productName} - ${lang === 'uk' ? 'Специфікація' : 'Specification'} ${index + 1}">
+        <div class="spec-image-overlay">
+          <p>${lang === 'uk' ? 'Натисніть для збільшення' : 'Click to enlarge'}</p>
+        </div>
+      </div>
+    `).join('');
+    
+    // Replace table with images
+    table.closest('.specs-table-wrapper').replaceWith(imagesContainer);
+    
+    // Setup lightbox for spec images
+    setupSpecImagesLightbox(specImages);
+    return;
+  }
   
   if (!specs || Object.keys(specs).length === 0) {
     table.innerHTML = '<tr><td colspan="2">No specifications available</td></tr>';
@@ -135,10 +212,11 @@ function renderRelatedProducts(category, subcategory, currentProduct) {
   relatedContainer.innerHTML = otherProducts.slice(0, 3).map(product => {
     const productName = lang === 'uk' ? (product.nameUk || product.name) : product.name;
     const productDesc = lang === 'uk' ? (product.descriptionUk || product.description) : product.description;
+    const productImage = (product.images && product.images.length > 0) ? product.images[0] : (product.image || '/assets/img/product-placeholder.svg');
     
     return `
       <div class="product-card">
-        <img src="${product.image || '/assets/img/product-placeholder.svg'}" alt="${productName}">
+        <img src="${productImage}" alt="${productName}">
         <h3>${productName}</h3>
         <p class="model">${product.model}</p>
         <p class="description">${productDesc.substring(0, 100)}...</p>
@@ -171,6 +249,85 @@ function setupInquiryForm(product) {
     // Show success message
     alert(t('form-success'));
     form.reset();
+  });
+}
+
+// Setup lightbox for specification images
+function setupSpecImagesLightbox(images) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.getElementById('lightbox-image');
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  
+  let currentImageIndex = 0;
+  
+  // Function to show image in lightbox
+  function showImage(index) {
+    currentImageIndex = index;
+    lightboxImage.src = images[index];
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
+  }
+  
+  // Function to close lightbox
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scrolling
+  }
+  
+  // Function to show next image
+  function showNext() {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    lightboxImage.src = images[currentImageIndex];
+  }
+  
+  // Function to show previous image
+  function showPrev() {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    lightboxImage.src = images[currentImageIndex];
+  }
+  
+  // Add click handlers to spec image cards
+  document.querySelectorAll('.spec-image-card').forEach(card => {
+    card.addEventListener('click', function() {
+      const index = parseInt(this.getAttribute('data-image-index'));
+      showImage(index);
+    });
+  });
+  
+  // Close button
+  closeBtn.addEventListener('click', closeLightbox);
+  
+  // Navigation buttons
+  if (images.length > 1) {
+    prevBtn.addEventListener('click', showPrev);
+    nextBtn.addEventListener('click', showNext);
+    prevBtn.style.display = 'flex';
+    nextBtn.style.display = 'flex';
+  } else {
+    prevBtn.style.display = 'none';
+    nextBtn.style.display = 'none';
+  }
+  
+  // Close on background click
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+  
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    if (!lightbox.classList.contains('active')) return;
+    
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowRight' && images.length > 1) {
+      showNext();
+    } else if (e.key === 'ArrowLeft' && images.length > 1) {
+      showPrev();
+    }
   });
 }
 
