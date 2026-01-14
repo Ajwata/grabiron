@@ -39,9 +39,9 @@
         "Carrier": "8-10 ton"
       }
     ],
-    "image": "../assets/img/Earth Auger.png",
+    "image": "assets/img/Earth Auger.png",
     "images": [
-      "../assets/img/Earth Auger.png"
+      "assets/img/Earth Auger.png"
     ],
     "url": "",
     "source_notes": ""
@@ -73,7 +73,7 @@
         "Carrier": "5-8 ton"
       }
     ],
-    "image": "../assets/img/Stump Planer.png",
+    "image": "assets/img/Stump Planer.png",
     "url": "",
     "source_notes": ""
   },
@@ -109,7 +109,7 @@
         "Carrier": "28-35 ton"
       }
     ],
-    "image": "../assets/img/Pile Driver.png",
+    "image": "assets/img/Pile Driver.png",
     "url": "",
     "source_notes": ""
   },
@@ -144,7 +144,7 @@
         "Carrier": "17-23 ton"
       }
     ],
-    "image": "../assets/img/Clamp Bucket.png",
+    "image": "assets/img/Clamp Bucket.png",
     "url": "",
     "source_notes": ""
   },
@@ -183,7 +183,7 @@
         "Carrier": "27-50 ton"
       }
     ],
-    "image": "../assets/img/Demolition Grapple.png",
+    "image": "assets/img/Demolition Grapple.png",
     "url": "",
     "source_notes": ""
   },
@@ -219,7 +219,7 @@
         "Carrier": "12-16 ton"
       }
     ],
-    "image": "../assets/img/Log Grab.png",
+    "image": "assets/img/Log Grab.png",
     "url": "",
     "source_notes": ""
   },
@@ -242,12 +242,9 @@
       "Material": "Hardox steel"
     },
     "variants": [],
-    "image": "../assets/img/Hydraulic shear pictures/308c040ab4902144a25683e7beadc83a.png",
+    "image": "assets/img/Eagle Shear.png",
     "images": [
-      "../assets/img/Hydraulic shear pictures/308c040ab4902144a25683e7beadc83a.png",
-      "../assets/img/Hydraulic shear pictures/5d11671dee6c8379a6ede3e486ebbd0c.png",
-      "../assets/img/Hydraulic shear pictures/9c202a6113fd89bb7ac8fd39b1c0eb50.png",
-      "../assets/img/Hydraulic shear pictures/cf7788162f6a39ebde853487170ab0bd.png"
+      "assets/img/Eagle Shear.png"
     ],
     "url": "",
     "source_notes": ""
@@ -271,7 +268,7 @@
       "Crushing Force": "Extra high"
     },
     "variants": [],
-    "image": "../assets/img/Fixed Pulverizer.png",
+    "image": "assets/img/Fixed Pulverizer.png",
     "url": "",
     "source_notes": ""
   },
@@ -294,7 +291,7 @@
       "Application": "Concrete, steel"
     },
     "variants": [],
-    "image": "../assets/img/Hydraulic Crusher.png",
+    "image": "assets/img/Hydraulic Crusher.png",
     "url": "",
     "source_notes": ""
   },
@@ -317,7 +314,7 @@
       "Jaw Opening": "500-1400 mm"
     },
     "variants": [],
-    "image": "../assets/img/Rotation Pulverizer.png",
+    "image": "assets/img/Rotation Pulverizer.png",
     "url": "",
     "source_notes": ""
   },
@@ -361,9 +358,9 @@
         "Energy": "2500 J"
       }
     ],
-    "image": "../assets/img/Hydraulic Breaker.png",
+    "image": "assets/img/Hydraulic Breaker.png",
     "images": [
-      "../assets/img/Hydraulic Breaker.png"
+      "assets/img/Hydraulic Breaker.png"
     ],
     "url": "",
     "source_notes": ""
@@ -387,7 +384,7 @@
       "Tooth Count": "1-5"
     },
     "variants": [],
-    "image": "../assets/img/Vibro Ripper.png",
+    "image": "assets/img/Vibro Ripper.png",
     "url": "",
     "source_notes": ""
   },
@@ -410,7 +407,7 @@
       "Output Size": "20-150 mm"
     },
     "variants": [],
-    "image": "../assets/img/Crusher Bucket.png",
+    "image": "assets/img/Crusher Bucket.png",
     "url": "",
     "source_notes": ""
   },
@@ -433,7 +430,7 @@
       "Rotation Speed": "50-150 rpm"
     },
     "variants": [],
-    "image": "../assets/img/Drum Cutter.png",
+    "image": "assets/img/Drum Cutter.png",
     "url": "",
     "source_notes": ""
   },
@@ -456,7 +453,7 @@
       "Frequency": "35-60 Hz"
     },
     "variants": [],
-    "image": "../assets/img/Hydraulic Compactor.png",
+    "image": "assets/img/Hydraulic Compactor.png",
     "url": "",
     "source_notes": ""
   },
@@ -492,11 +489,11 @@
         "Carrier": "25-42 ton"
       }
     ],
-    "image": "../assets/img/Quick hitch pictures/4ae5019c3120b20075d54851b2b9f498.jpg",
+    "image": "assets/img/Quick hitch pictures/4ae5019c3120b20075d54851b2b9f498.jpg",
     "images": [
-      "../assets/img/Quick hitch pictures/4ae5019c3120b20075d54851b2b9f498.jpg",
-      "../assets/img/Quick hitch pictures/c49364d39f26ad77cdf6e041f2e0af43.jpg",
-      "../assets/img/Quick hitch pictures/dd7df58d0dc4b98fdf8f55cf367ad92c.jpg"
+      "assets/img/Quick hitch pictures/4ae5019c3120b20075d54851b2b9f498.jpg",
+      "assets/img/Quick hitch pictures/c49364d39f26ad77cdf6e041f2e0af43.jpg",
+      "assets/img/Quick hitch pictures/dd7df58d0dc4b98fdf8f55cf367ad92c.jpg"
     ],
     "url": "",
     "source_notes": ""
@@ -520,7 +517,7 @@
       "Material": "Hardox steel"
     },
     "variants": [],
-    "image": "../assets/img/Mixer Bucket.png",
+    "image": "assets/img/Mixer Bucket.png",
     "url": "",
     "source_notes": ""
   },
@@ -556,7 +553,7 @@
         "Carrier": "5-8 ton"
       }
     ],
-    "image": "../assets/img/Splitter Cone.png",
+    "image": "assets/img/Splitter Cone.png",
     "url": "",
     "source_notes": ""
   }
