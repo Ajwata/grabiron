@@ -506,7 +506,62 @@
     .lightbox-next {
       right: 20px;
     }
+
+    /* PDF Download Button Styles */
+    .pdf-download-section {
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .btn-pdf-download {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #ff6600 0%, #ff8533 100%);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .btn-pdf-download:hover {
+      background: linear-gradient(135deg, #e65c00 0%, #ff6600 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 102, 0, 0.4);
+    }
+
+    .btn-pdf-download:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 10px rgba(255, 102, 0, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .btn-pdf-download {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 0.875rem 1.5rem;
+      }
+    }
   </style>
+
 </head>
 <body>
   
@@ -791,6 +846,23 @@
         <div class="characteristics-section" id="specs-images-wrapper">
           <h2 class="section-title" id="specs-title" style="display: none;">${t('specificationsAndDimensions') || 'Specifications & Dimensions'}</h2>
           <div id="specs-images-section"></div>
+          
+          <!-- PDF Download Button -->
+          <div class="pdf-download-section" style="text-align: center; margin-top: 2rem; padding: 2rem; background: #f8f8f8; border-radius: 8px;">
+            <div style="margin-bottom: 1rem;">
+              <svg style="width: 48px; height: 48px; color: #ff6600; margin-bottom: 0.5rem;" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 style="color: #333; margin-bottom: 0.5rem; font-size: 1.2rem;">${t('download-catalog') || 'Download Full Catalog'}</h3>
+            <p style="color: #666; margin-bottom: 1.5rem; font-size: 0.9rem;">${t('catalog-pdf-info') || 'Complete product information and specifications'}</p>
+            <a href="../RAY BROCHURE.pdf" download="GrabIron-RAY-BROCHURE.pdf" class="btn-pdf-download">
+              <svg style="width: 20px; height: 20px; margin-right: 0.5rem;" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+              ${t('download-catalog') || 'Download Full Catalog'} (PDF)
+            </a>
+          </div>
         </div>
         
         <div style="text-align: center; margin: 3rem 0;">
@@ -868,9 +940,9 @@
       
       // Map product names to their info images (only existing files)
       const productImageMap = {
-        'земляний бур': ['auger drive.png', 'auger drive2.png'],
-        'earth auger': ['auger drive.png', 'auger drive2.png'],
-        'бур': ['auger drive.png', 'auger drive2.png'],
+        'земляний бур': ['auger drive.png', 'auger drive2.png', 'auger drive3.png', 'auger drive4.png'],
+        'earth auger': ['auger drive.png', 'auger drive2.png', 'auger drive3.png', 'auger drive4.png'],
+        'бур': ['auger drive.png', 'auger drive2.png', 'auger drive3.png', 'auger drive4.png'],
         
         'гідравлічний молот': ['Hydraulic Breaker2.png'],
         'hydraulic breaker': ['Hydraulic Breaker2.png'],

@@ -41,7 +41,11 @@
     ],
     "image": "../assets/img/Earth Auger.png",
     "images": [
-      "../assets/img/Earth Auger.png"
+      "../assets/img/Earth Auger.png",
+      "../assets/img/Earth auger/auger drive.png",
+      "../assets/img/Earth auger/auger drive2.png",
+      "../assets/img/Earth auger/auger drive3.png",
+      "../assets/img/Earth auger/auger drive4.png"
     ],
     "url": "",
     "source_notes": ""

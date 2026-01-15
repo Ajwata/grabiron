@@ -161,6 +161,8 @@ export const translations = {
     'form-success': 'Thank you! Your inquiry has been sent successfully.',
     'no-related-products': 'No related products available',
     'error-loading': 'Error loading product information',
+    'download-catalog': 'Download Full Catalog',
+    'catalog-pdf-info': 'Complete product information and specifications',
     
     // Categories
     'cat-demolition': 'Demolition',
@@ -348,6 +350,8 @@ export const translations = {
     'form-message': 'Повідомлення',
     'form-submit': 'Надіслати запит',
     'request-quote': 'Запит ціни',
+    'download-catalog': 'Завантажити повний каталог',
+    'catalog-pdf-info': 'Повна інформація про продукцію та характеристики',
     'download-specs': 'Завантажити специфікації',
     'view-details': 'Детальніше',
     'form-success': 'Дякуємо! Ваш запит успішно надіслано.',
