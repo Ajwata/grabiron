@@ -746,7 +746,9 @@
       
       // Get images array or fallback to single image
       const images = product.images || [];
-      const mainImage = images.length > 0 ? images[0] : (product.image || '');
+      const singleImage = product.image || '';
+      
+      const mainImage = images.length > 0 ? images[0] : (singleImage || '');
       
       const html = `
         <div class="product-layout">
@@ -856,7 +858,7 @@
             </div>
             <h3 style="color: #333; margin-bottom: 0.5rem; font-size: 1.2rem;">${t('download-catalog') || 'Download Full Catalog'}</h3>
             <p style="color: #666; margin-bottom: 1.5rem; font-size: 0.9rem;">${t('catalog-pdf-info') || 'Complete product information and specifications'}</p>
-            <a href="../RAY BROCHURE.pdf" download="GrabIron-RAY-BROCHURE.pdf" class="btn-pdf-download">
+            <a href="javascript:void(0)" onclick="downloadPdf()" class="btn-pdf-download">
               <svg style="width: 20px; height: 20px; margin-right: 0.5rem;" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
               </svg>
@@ -929,14 +931,50 @@
       }
     }
     
+    function getLanguageAwarePdfPath() {
+      // Get current language from i18n
+      const lang = typeof getCurrentLanguage !== 'undefined' ? getCurrentLanguage() : (localStorage.getItem('language') || 'en');
+      
+      // Return appropriate PDF based on language
+      if (lang === 'uk') {
+        return '../RAY BROCHURE UA.pdf';
+      }
+      
+      return '../RAY BROCHURE.pdf';
+    }
+    
+    function getLanguageAwareImagePath(imagePath) {
+      // Get current language from i18n
+      const lang = typeof getCurrentLanguage !== 'undefined' ? getCurrentLanguage() : (localStorage.getItem('language') || 'en');
+      
+      // If Ukrainian, check if UA version exists
+      if (lang === 'uk' && imagePath && !imagePath.includes('placeholder')) {
+        // Extract just the filename
+        const lastSlash = imagePath.lastIndexOf('/');
+        const fileName = imagePath.substring(lastSlash + 1);
+        const dirPath = imagePath.substring(0, lastSlash + 1);
+        
+        // Transform filename
+        const withoutExt = fileName.replace(/\.(png|jpg|jpeg|gif|svg|webp)$/i, '');
+        const ext = fileName.match(/\.(png|jpg|jpeg|gif|svg|webp)$/i)?.[0] || '.png';
+        const uaFileName = withoutExt + 'UA' + ext;
+        
+        return dirPath + uaFileName;
+      }
+      
+      return imagePath;
+    }
+    
     function getProductInfoImages(productName) {
       const nameLower = productName.toLowerCase();
       const images = [];
       const basePath = '../assets/img/info/';
+      const lang = typeof getCurrentLanguage !== 'undefined' ? getCurrentLanguage() : (localStorage.getItem('language') || 'en');
       
       console.log('=== SEARCHING IMAGES ===');
       console.log('Product name:', productName);
       console.log('Name lowercase:', nameLower);
+      console.log('Current language:', lang);
       
       // Map product names to their info images (only existing files)
       const productImageMap = {
@@ -1028,7 +1066,9 @@
         if (nameLower.includes(key)) {
           console.log('Match found for key:', key);
           fileNames.forEach(fileName => {
-            const fullPath = basePath + fileName;
+            // Use language-aware path
+            const localizedFileName = getLanguageAwareImagePath(fileName);
+            const fullPath = basePath + localizedFileName;
             images.push(fullPath);
             console.log('Added image:', fullPath);
           });
@@ -1172,6 +1212,36 @@
              chars['Класс машин (t)'] ||
              chars['Экскаватор'] || 
              'N/A';
+    }
+    
+    // Re-render when language changes
+    document.addEventListener('languageChanged', () => {
+      console.log('Language changed, re-rendering product...');
+      const urlParams = new URLSearchParams(window.location.search);
+      const productUrl = urlParams.get('id');
+      
+      if (productUrl) {
+        import('../js/api.js').then(({ getProductByUrl }) => {
+          const product = getProductByUrl(productUrl);
+          if (product) {
+            renderProduct(product);
+          }
+        });
+      }
+    });
+    
+    // Function to download language-aware PDF
+    function downloadPdf() {
+      const pdfPath = getLanguageAwarePdfPath();
+      const lang = typeof getCurrentLanguage !== 'undefined' ? getCurrentLanguage() : (localStorage.getItem('language') || 'en');
+      const fileName = lang === 'uk' ? 'GrabIron-RAY-BROCHURE-UA.pdf' : 'GrabIron-RAY-BROCHURE.pdf';
+      
+      const link = document.createElement('a');
+      link.href = pdfPath;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
   </script>
   

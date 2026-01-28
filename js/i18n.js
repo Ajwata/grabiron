@@ -457,3 +457,40 @@ export function initLanguageSwitcher() {
   // Translate page on load
   translatePage();
 }
+
+// Function to get language-aware image path
+export function getLanguageAwareImagePath(imagePath) {
+  if (!imagePath || imagePath.includes('placeholder')) return imagePath;
+  
+  const lang = getCurrentLanguage();
+  
+  // If Ukrainian, check if UA version exists
+  if (lang === 'uk') {
+    // Extract just the filename
+    const lastSlash = imagePath.lastIndexOf('/');
+    const fileName = imagePath.substring(lastSlash + 1);
+    const dirPath = imagePath.substring(0, lastSlash + 1);
+    
+    // Transform filename
+    const withoutExt = fileName.replace(/\.(png|jpg|jpeg|gif|svg|webp)$/i, '');
+    const ext = fileName.match(/\.(png|jpg|jpeg|gif|svg|webp)$/i)?.[0] || '.png';
+    const uaFileName = withoutExt + 'UA' + ext;
+    
+    return dirPath + uaFileName;
+  }
+  
+  return imagePath;
+}
+
+// Function to get language-aware PDF path
+export function getLanguageAwarePdfPath(baseName = 'RAY BROCHURE') {
+  const lang = getCurrentLanguage();
+  
+  // If Ukrainian, return UA version
+  if (lang === 'uk') {
+    return `${baseName} UA.pdf`;
+  }
+  
+  return `${baseName}.pdf`;
+}
+

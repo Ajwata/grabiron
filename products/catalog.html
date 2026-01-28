@@ -715,6 +715,8 @@
         const categoryName = getCategoryDisplayName(product.category);
         const carrierWeight = extractCarrierWeight(product);
         const variantsCount = product.variants?.length || 0;
+        
+        // Get product image
         const productImage = (product.images && product.images.length > 0) ? product.images[0] : (product.image || '../assets/img/product-placeholder.svg');
         
         return `
@@ -828,6 +830,12 @@
           });
         });
       }
+      
+      // Re-render products when language changes
+      document.addEventListener('languageChanged', () => {
+        console.log('Language changed, re-rendering products...');
+        renderProducts(currentCategory, searchQuery);
+      });
     }
   </script>
   
