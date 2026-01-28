@@ -744,11 +744,15 @@
       const categoryIcon = getCategoryIcon(product.category);
       const carrierWeight = extractCarrierWeight(product);
       
-      // Get images array or fallback to single image
-      const images = product.images || [];
-      const singleImage = product.image || '';
+      // Get images - use images array if available, otherwise convert single image to array
+      let images = [];
+      if (product.images && Array.isArray(product.images) && product.images.length > 0) {
+        images = product.images;
+      } else if (product.image) {
+        images = [product.image];
+      }
       
-      const mainImage = images.length > 0 ? images[0] : (singleImage || '');
+      const mainImage = images.length > 0 ? images[0] : '';
       
       const html = `
         <div class="product-layout">
@@ -978,85 +982,109 @@
       
       // Map product names to their info images (only existing files)
       const productImageMap = {
+        // Earth Auger / Земляний бур
         'земляний бур': ['auger drive.png', 'auger drive2.png', 'auger drive3.png', 'auger drive4.png'],
         'earth auger': ['auger drive.png', 'auger drive2.png', 'auger drive3.png', 'auger drive4.png'],
         'бур': ['auger drive.png', 'auger drive2.png', 'auger drive3.png', 'auger drive4.png'],
         
+        // Pile Driver / Вібропогружувач
+        'вібропогружувач': ['Plie driver 2.png'],
+        'pile driver': ['Plie driver 2.png'],
+        'pile cutter': ['Plie driver 2.png'],
+        'сваерезка': ['Plie driver 2.png'],
+        'забійник паль': ['Plie driver 2.png'],
+        
+        // Clamp Bucket / Захоплювальний ківш
+        'захоплювальний ківш': ['Log Grab4.png'],
+        'clamp bucket': ['Log Grab4.png'],
+        'ковш-затискач': ['Log Grab4.png'],
+        
+        // Demolition Grapple / Демонтажний грейфер
+        'демонтажний грейфер': ['Log Grab2.png'],
+        'demolition grapple': ['Log Grab2.png'],
+        
+        // Log Grab / Захват для колод
+        'захват для колод': ['Log Grab3.png'],
+        'log grab': ['Log Grab3.png'],
+        'грейфер для колод': ['Log Grab3.png'],
+        
+        // Eagle Shear / Орлині ножиці
+        'орлині ножиці': ['Eagle Shear.png'],
+        'eagle shear': ['Eagle Shear.png'],
+        'гідроножиці': ['Eagle Shear.png'],
+        'scrap shear': ['Eagle Shear.png'],
+        'ножницы': ['Eagle Shear.png'],
+        
+        // Fixed Pulverizer / Стаціонарний пульверизатор
+        'стаціонарний пульверизатор': ['Fixed Pulverizer.png', 'Fixed Pulverizer2.png'],
+        'fixed pulverizer': ['Fixed Pulverizer.png', 'Fixed Pulverizer2.png'],
+        
+        // Hydraulic Crusher / Гідравлічний дробитель
+        'гідравлічний дробитель': ['Hydraulic Crusher.png'],
+        'hydraulic crusher': ['Hydraulic Crusher.png'],
+        'гідравлічний дробарка': ['Hydraulic Crusher.png'],
+        'crusher': ['Hydraulic Crusher.png'],
+        
+        // Rotation Pulverizer / Поворотний пульверизатор
+        'поворотний пульверизатор': ['Rotation Pulverizer.png'],
+        'rotation pulverizer': ['Rotation Pulverizer.png'],
+        'ротаційний пульверизатор': ['Rotation Pulverizer.png'],
+        
+        // Hydraulic Breaker / Гідравлічний молот
         'гідравлічний молот': ['Hydraulic Breaker2.png'],
         'hydraulic breaker': ['Hydraulic Breaker2.png'],
         'breaker': ['Hydraulic Breaker2.png'],
         
-        'стаціонарний пульверизатор': ['Fixed Pulverizer.png', 'Fixed Pulverizer2.png'],
-        'fixed pulverizer': ['Fixed Pulverizer.png', 'Fixed Pulverizer2.png'],
-        
-        'ротаційний пульверизатор': ['Rotation Pulverizer.png'],
-        'rotation pulverizer': ['Rotation Pulverizer.png'],
-        
-        'дробарка ковш': ['Crusher Bucket.png'],
-        'crusher bucket': ['Crusher Bucket.png'],
-        
-        'гідравлічний дробарка': ['Hydraulic Crusher.png'],
-        'hydraulic crusher': ['Hydraulic Crusher.png'],
-        'crusher': ['Hydraulic Crusher.png'],
-        
-        'гідравлічний компактор': ['Hydraulic Compactor2.png'],
-        'hydraulic compactor': ['Hydraulic Compactor2.png'],
-        'compactor': ['Hydraulic Compactor2.png'],
-        
-        'барабанний різак': ['Drum Cutter.png'],
-        'drum cutter': ['Drum Cutter.png'],
-        
-        'демонтажний грейфер': ['Log Grab2.png'],
-        'demolition grapple': ['Log Grab2.png'],
-        
-        'грейфер для колод': ['Log Grab3.png'],
-        'log grab': ['Log Grab3.png'],
-        
-        'ковш-затискач': ['Log Grab4.png'],
-        'clamp bucket': ['Log Grab4.png'],
-        
-        'міксер ковш': ['Mixer Bucket2.png'],
-        'mixer bucket': ['Mixer Bucket2.png'],
-        
-        'пеньковий фрезер': ['Stump Planer.png'],
-        'stump planer': ['Stump Planer.png'],
-        'корчеватель': ['Stump Planer.png'],
-        'splitter cone': ['Stump Planer.png'],
-        'конус': ['Stump Planer.png'],
-        
-        'забійник паль': ['Plie driver 2.png'],
-        'pile driver': ['Plie driver 2.png'],
-        'pile cutter': ['Plie driver 2.png'],
-        'сваерезка': ['Plie driver 2.png'],
-        
-        'швидкозмінний пристрій': ['Quick hitch.png'],
-        'quick hitch': ['Quick hitch.png'],
-        'quick coupler': ['Quick hitch.png'],
-        'быстросъем': ['Quick hitch.png'],
-        
-        'гідроножиці': ['Eagle Shear.png'],
-        'eagle shear': ['Eagle Shear.png'],
-        'scrap shear': ['Eagle Shear.png'],
-        'ножницы': ['Eagle Shear.png'],
-        
-        'мультипроцессор': ['Pulverizer.png'],
-        'multiprocessor': ['Pulverizer.png'],
-        
-        'сортировочный грейфер': ['Log Grab2.png', 'Log Grab3.png'],
-        'sort grapple': ['Log Grab2.png', 'Log Grab3.png'],
-        
-        'грейфер для металлолома': ['Log Grab2.png'],
-        'scrap grapple': ['Log Grab2.png'],
-        
-        'бетонокрошитель': ['Pulverizer.png', 'Crusher Bucket.png'],
-        'concrete crusher': ['Pulverizer.png', 'Crusher Bucket.png'],
-        
+        // Vibro Ripper / Вібраційний рихлитель
         'вібраційний рихлитель': ['vibro ripper.png'],
         'vibro ripper': ['vibro ripper.png'],
         'рихлитель': ['vibro ripper.png'],
         'ripper': ['vibro ripper.png'],
         'vibratory ripper': ['vibro ripper.png'],
         
+        // Crusher Bucket / Дробильний ківш
+        'дробильний ківш': ['Crusher Bucket.png'],
+        'crusher bucket': ['Crusher Bucket.png'],
+        'дробарка ковш': ['Crusher Bucket.png'],
+        
+        // Drum Cutter / Барабанний різак
+        'барабанний різак': ['Drum Cutter.png'],
+        'drum cutter': ['Drum Cutter.png'],
+        
+        // Hydraulic Compactor / Гідравлічний ущільнювач
+        'гідравлічний ущільнювач': ['Hydraulic Compactor2.png'],
+        'hydraulic compactor': ['Hydraulic Compactor2.png'],
+        'компактор': ['Hydraulic Compactor2.png'],
+        
+        // Quick Hitch / Швидкоз'ємна муфта
+        'швидкоз\'ємна муфта': ['Quick hitch.png'],
+        'quick hitch': ['Quick hitch.png'],
+        'швидкозмінний пристрій': ['Quick hitch.png'],
+        'quick coupler': ['Quick hitch.png'],
+        'быстросъем': ['Quick hitch.png'],
+        
+        // Mixer Bucket / Змішувальний ківш
+        'змішувальний ківш': ['Mixer Bucket2.png'],
+        'mixer bucket': ['Mixer Bucket2.png'],
+        'міксер ковш': ['Mixer Bucket2.png'],
+        
+        // Splitter Cone / Конус-колун
+        'конус-колун': ['Stump Planer.png'],
+        'stump planer': ['Stump Planer.png'],
+        'пеньковий фрезер': ['Stump Planer.png'],
+        'splitter cone': ['Stump Planer.png'],
+        'конус': ['Stump Planer.png'],
+        'корчеватель': ['Stump Planer.png'],
+        
+        // Other products
+        'мультипроцессор': ['Pulverizer.png'],
+        'multiprocessor': ['Pulverizer.png'],
+        'сортировочный грейфер': ['Log Grab2.png', 'Log Grab3.png'],
+        'sort grapple': ['Log Grab2.png', 'Log Grab3.png'],
+        'грейфер для металлолома': ['Log Grab2.png'],
+        'scrap grapple': ['Log Grab2.png'],
+        'бетонокрошитель': ['Pulverizer.png', 'Crusher Bucket.png'],
+        'concrete crusher': ['Pulverizer.png', 'Crusher Bucket.png'],
         'земснаряд': ['Dredging pump.png'],
         'dredging pump': ['Dredging pump.png']
       };
@@ -1066,11 +1094,10 @@
         if (nameLower.includes(key)) {
           console.log('Match found for key:', key);
           fileNames.forEach(fileName => {
-            // Use language-aware path
-            const localizedFileName = getLanguageAwareImagePath(fileName);
-            const fullPath = basePath + localizedFileName;
-            images.push(fullPath);
-            console.log('Added image:', fullPath);
+            // Use language-aware path for spec images
+            const localizedFileName = getLanguageAwareImagePath(basePath + fileName);
+            images.push(localizedFileName);
+            console.log('Added image:', localizedFileName);
           });
           break; // Use first match
         }
