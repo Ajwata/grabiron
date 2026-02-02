@@ -1,6 +1,53 @@
 [
   {
     "name": {
+      "uk": "Гідравлічний молот",
+      "en": "Hydraulic Breaker"
+    },
+    "category": "Демонтаж",
+    "price": "Ціну уточнюйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Гідравлічний відбійний молоток",
+      "en": "Hydraulic breaking hammer"
+    },
+    "characteristics": {
+      "Carrier Weight": "0.5-65 ton",
+      "Impact Energy": "100-8500 J",
+      "Working Pressure": "120-180 bar",
+      "Frequency": "400-1400 bpm"
+    },
+    "variants": [
+      {
+        "Model": "RHB35",
+        "Carrier": "1-2.5 ton",
+        "Energy": "400 J"
+      },
+      {
+        "Model": "RHB68",
+        "Carrier": "3-6 ton",
+        "Energy": "800 J"
+      },
+      {
+        "Model": "RHB135",
+        "Carrier": "9-16 ton",
+        "Energy": "1800 J"
+      },
+      {
+        "Model": "RHB175",
+        "Carrier": "15-23 ton",
+        "Energy": "2500 J"
+      }
+    ],
+    "image": "../assets/img/Hydraulic Breaker.png",
+    "images": [
+      "../assets/img/Hydraulic Breaker.png"
+    ],
+    "url": "",
+    "source_notes": ""
+  },
+  {
+    "name": {
       "uk": "Земляний бур",
       "en": "Earth Auger"
     },
@@ -225,7 +272,7 @@
   },
   {
     "name": {
-      "uk": "Орлині ножиці",
+      "uk": "Ножиці для металлу",
       "en": "Eagle Shear"
     },
     "category": "Металолом",
@@ -554,6 +601,98 @@
       }
     ],
     "image": "../assets/img/Splitter Cone.png",
+    "url": "",
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Грейфер для металолому",
+      "en": "Scrap Metal Grapple"
+    },
+    "category": "Металолом",
+    "price": "Ціну уточнюйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Спеціалізований грейфер для захоплення та сортування металолому",
+      "en": "Specialized grapple for grabbing and sorting scrap metal"
+    },
+    "characteristics": {
+      "Carrier Weight": "3-35 ton",
+      "Working Pressure": "210-280 bar",
+      "Oil Flow": "80-280 l/min",
+      "Jaw Opening": "0.8-2.5 m"
+    },
+    "variants": [
+      {
+        "Model": "GM-8",
+        "Carrier": "3-8 ton"
+      },
+      {
+        "Model": "GM-12",
+        "Carrier": "8-12 ton"
+      },
+      {
+        "Model": "GM-18",
+        "Carrier": "15-18 ton"
+      },
+      {
+        "Model": "GM-25",
+        "Carrier": "20-25 ton"
+      }
+    ],
+    "image": "../assets/img/info/грейфер для метала.png",
+    "images": [
+      "../assets/img/info/грейфер для метала.png",
+      "../assets/img/info/грейфер для метала2.png",
+      "../assets/img/info/грейфер для метала3.png",
+      "../assets/img/info/грейфер для метала4.png",
+      "../assets/img/info/грейфер для метала5.png"
+    ],
+    "url": "",
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Ножиці для залізобетону Грабірон",
+      "en": "Reinforced Concrete Shear Grabíron"
+    },
+    "category": "Демонтаж",
+    "price": "Ціну уточнюйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Спеціалізовані гідроножиці для різання залізобетону та залізних конструкцій",
+      "en": "Specialized hydraulic shear for cutting reinforced concrete and steel structures"
+    },
+    "characteristics": {
+      "Carrier Weight": "15-50 ton",
+      "Working Pressure": "280-350 bar",
+      "Oil Flow": "150-280 l/min",
+      "Cutting Force": "500-1200 kN"
+    },
+    "variants": [
+      {
+        "Model": "CS-1500",
+        "Carrier": "15-20 ton"
+      },
+      {
+        "Model": "CS-2000",
+        "Carrier": "20-30 ton"
+      },
+      {
+        "Model": "CS-2500",
+        "Carrier": "30-45 ton"
+      }
+    ],
+    "image": "../assets/img/info/Гідроножиці CS 2500.png",
+    "images": [
+      "../assets/img/info/Гідроножиці CS 2500.png",
+      "../assets/img/info/Гідроножиці CS 2500 2.png",
+      "../assets/img/info/Гідроножиці CS 2500 3.png",
+      "../assets/img/info/Гідроножиці CS 2500 4.png",
+      "../assets/img/info/Гідроножиці CS 2500 5.png",
+      "../assets/img/info/Гідроножиці CS 2500 6.png",
+      "../assets/img/info/Гідроножиці CS 2500 7.png"
+    ],
     "url": "",
     "source_notes": ""
   }

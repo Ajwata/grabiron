@@ -1,0 +1,652 @@
+[
+  {
+    "name": {
+      "uk": "Гідравлічний молот",
+      "en": "Hydraulic Breaker"
+    },
+    "category": "Демонтаж",
+    "price": "Ціну уточнюйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Гідравлічний відбійний молоток",
+      "en": "Hydraulic breaking hammer"
+    },
+    "characteristics": {
+      "Carrier Weight": "0.5-65 ton",
+      "Impact Energy": "100-8500 J",
+      "Working Pressure": "120-180 bar",
+      "Frequency": "400-1400 bpm"
+    },
+    "variants": [
+      {
+        "Model": "RHB35",
+        "Carrier": "1-2.5 ton",
+        "Energy": "400 J"
+      },
+      {
+        "Model": "RHB68",
+        "Carrier": "3-6 ton",
+        "Energy": "800 J"
+      },
+      {
+        "Model": "RHB135",
+        "Carrier": "9-16 ton",
+        "Energy": "1800 J"
+      },
+      {
+        "Model": "RHB175",
+        "Carrier": "15-23 ton",
+        "Energy": "2500 J"
+      }
+    ],
+    "image": "../assets/img/Hydraulic Breaker.png",
+    "images": [
+      "../assets/img/Hydraulic Breaker.png"
+    ],
+    "url": "",
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Земляний бур",
+      "en": "Earth Auger"
+    },
+    "category": "Бурение",
+    "price": "Ціну уточнюйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Бурове обладнання для земляних робіт",
+      "en": "Drilling equipment for earthworks"
+    },
+    "characteristics": {
+      "Carrier Weight": "1-50 ton",
+      "Working Pressure": "160-280 bar",
+      "Oil Flow": "15-280 l/min",
+      "Output Shaft": "Ø50-110mm"
+    },
+    "variants": [
+      {
+        "Model": "REA100",
+        "Carrier": "0.5-1 ton"
+      },
+      {
+        "Model": "REA200",
+        "Carrier": "1.3-2 ton"
+      },
+      {
+        "Model": "REA300",
+        "Carrier": "1.5-3 ton"
+      },
+      {
+        "Model": "REA500",
+        "Carrier": "4-6 ton"
+      },
+      {
+        "Model": "REA800",
+        "Carrier": "8-10 ton"
+      }
+    ],
+    "image": "../assets/img/Earth Auger.png",
+    "images": [
+      "../assets/img/Earth Auger.png"
+    ],
+    "url": "",
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Грейфер для металолому",
+      "en": "Scrap Metal Grapple"
+    },
+    "category": "Металолом",
+    "price": "Ціну уточнюйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Спеціалізований грейфер для захоплення та сортування металолому",
+      "en": "Specialized grapple for grabbing and sorting scrap metal"
+    },
+    "characteristics": {
+      "Carrier Weight": "3-35 ton",
+      "Working Pressure": "210-280 bar",
+      "Oil Flow": "80-280 l/min",
+      "Jaw Opening": "0.8-2.5 m"
+    },
+    "variants": [
+      {
+        "Model": "GM-8",
+        "Carrier": "3-8 ton"
+      },
+      {
+        "Model": "GM-12",
+        "Carrier": "8-12 ton"
+      },
+      {
+        "Model": "GM-18",
+        "Carrier": "15-18 ton"
+      },
+      {
+        "Model": "GM-25",
+        "Carrier": "20-25 ton"
+      }
+    ],
+    "image": "../assets/img/info/грейфер для метала.png",
+    "images": [
+      "../assets/img/info/грейфер для метала.png",
+      "../assets/img/info/грейфер для метала2.png",
+      "../assets/img/info/грейфер для метала3.png",
+      "../assets/img/info/грейфер для метала4.png",
+      "../assets/img/info/грейфер для метала5.png"
+    ],
+    "url": "",
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Демонтажний грейфер",
+      "en": "Demolition Grapple"
+    },
+    "category": "Демонтаж",
+    "price": "Ціну уточнюйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Грейфер для демонтажних робіт",
+      "en": "Grapple for demolition work"
+    },
+    "characteristics": {
+      "Carrier Weight": "1.5-50 ton",
+      "Working Pressure": "200 bar",
+      "Opening Width": "800-2500 mm"
+    },
+    "variants": [
+      {
+        "Model": "RG-02",
+        "Carrier": "1.5-3 ton"
+      },
+      {
+        "Model": "RG-04",
+        "Carrier": "4-6 ton"
+      },
+      {
+        "Model": "RG-08",
+        "Carrier": "12-16 ton"
+      },
+      {
+        "Model": "RG-15",
+        "Carrier": "27-50 ton"
+      }
+    ],
+    "image": "../assets/img/Demolition Grapple.png",
+    "url": "",
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Ножиці для залізобетону Грабірон",
+      "en": "Reinforced Concrete Shear Grabíron"
+    },
+    "category": "Демонтаж",
+    "price": "Ціну уточнюйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Спеціалізовані гідроножиці для різання залізобетону та залізних конструкцій",
+      "en": "Specialized hydraulic shear for cutting reinforced concrete and steel structures"
+    },
+    "characteristics": {
+      "Carrier Weight": "15-50 ton",
+      "Working Pressure": "280-350 bar",
+      "Oil Flow": "150-280 l/min",
+      "Cutting Force": "500-1200 kN"
+    },
+    "variants": [
+      {
+        "Model": "CS-1500",
+        "Carrier": "15-20 ton"
+      },
+      {
+        "Model": "CS-2000",
+        "Carrier": "20-30 ton"
+      },
+      {
+        "Model": "CS-2500",
+        "Carrier": "30-45 ton"
+      }
+    ],
+    "image": "../assets/img/info/Гідроножиці CS 2500.png",
+    "images": [
+      "../assets/img/info/Гідроножиці CS 2500.png",
+      "../assets/img/info/Гідроножиці CS 2500 2.png",
+      "../assets/img/info/Гідроножиці CS 2500 3.png",
+      "../assets/img/info/Гідроножиці CS 2500 4.png",
+      "../assets/img/info/Гідроножиці CS 2500 5.png",
+      "../assets/img/info/Гідроножиці CS 2500 6.png",
+      "../assets/img/info/Гідроножиці CS 2500 7.png"
+    ],
+    "url": "",
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Ножиці для металлу",
+      "en": "Eagle Shear"
+    },
+    "category": "Металолом",
+    "price": "Ціну уточнюйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Ножиці для різання металу",
+      "en": "Metal cutting shear"
+    },
+    "characteristics": {
+      "Carrier Weight": "5-50 ton",
+      "Working Pressure": "200-280 bar",
+      "Cutting Force": "High capacity",
+      "Material": "Hardox steel"
+    },
+    "variants": [],
+    "image": "../assets/img/Eagle Shear.png",
+    "images": [
+      "../assets/img/Eagle Shear.png"
+    ],
+    "url": "",
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Поворотний пульверизатор",
+      "en": "Rotation Pulverizer"
+    },
+    "category": "Демонтаж",
+    "price": "Ціну уточнюйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Пульверизатор з можливістю обертання",
+      "en": "Rotating pulverizer"
+    },
+    "characteristics": {
+      "Carrier Weight": "10-50 ton",
+      "Working Pressure": "220-300 bar",
+      "Rotation": "360",
+      "Jaw Opening": "500-1400 mm"
+    },
+    "variants": [],
+    "image": "../assets/img/Rotation Pulverizer.png",
+    "url": "",
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Дробильний ківш",
+      "en": "Crusher Bucket"
+    },
+    "category": "Другое",
+    "price": "Ціну уточнюйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Ківш для дробління матеріалів",
+      "en": "Bucket for crushing materials"
+    },
+    "characteristics": {
+      "Carrier Weight": "4-45 ton",
+      "Crushing Capacity": "30-200 m/h",
+      "Jaw Opening": "70-400 mm",
+      "Output Size": "20-150 mm"
+    },
+    "variants": [],
+    "image": "../assets/img/Crusher Bucket.png",
+    "url": "",
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Стаціонарний пульверизатор",
+      "en": "Fixed Pulverizer"
+    },
+    "category": "Демонтаж",
+    "price": "Ціну уточнюйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Пульверизатор для подрібнення",
+      "en": "Pulverizer for crushing"
+    },
+    "characteristics": {
+      "Carrier Weight": "8-40 ton",
+      "Working Pressure": "200-280 bar",
+      "Jaw Opening": "400-1200 mm",
+      "Crushing Force": "Extra high"
+    },
+    "variants": [],
+    "image": "../assets/img/Fixed Pulverizer.png",
+    "url": "",
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Швидкоз'ємна муфта",
+      "en": "Quick Hitch"
+    },
+    "category": "Другое",
+    "price": "Ціну уточнюйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Швидкоз'ємне з'єднання",
+      "en": "Quick coupling system"
+    },
+    "characteristics": {
+      "Carrier Weight": "1-80 ton",
+      "Pin Diameter": "25-110 mm",
+      "Safety System": "Dual lock",
+      "Type": "Hydraulic"
+    },
+    "variants": [
+      {
+        "Model": "HQH01",
+        "Carrier": "1-4 ton"
+      },
+      {
+        "Model": "HQH03",
+        "Carrier": "8-13 ton"
+      },
+      {
+        "Model": "HQH06",
+        "Carrier": "25-42 ton"
+      }
+    ],
+    "image": "../assets/img/Quick hitch pictures/4ae5019c3120b20075d54851b2b9f498.jpg",
+    "images": [
+      "../assets/img/Quick hitch pictures/4ae5019c3120b20075d54851b2b9f498.jpg",
+      "../assets/img/Quick hitch pictures/c49364d39f26ad77cdf6e041f2e0af43.jpg",
+      "../assets/img/Quick hitch pictures/dd7df58d0dc4b98fdf8f55cf367ad92c.jpg"
+    ],
+    "url": "",
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Захоплювальний ківш",
+      "en": "Clamp Bucket"
+    },
+    "category": "Сортировка",
+    "price": "Ціну уточнюйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Ківш із захватом",
+      "en": "Bucket with clamp function"
+    },
+    "characteristics": {
+      "Carrier Weight": "5-30 ton",
+      "Working Pressure": "120-180 bar",
+      "Volume": "0.2-0.6 m"
+    },
+    "variants": [
+      {
+        "Model": "RCP04",
+        "Carrier": "5-11 ton"
+      },
+      {
+        "Model": "RCP06",
+        "Carrier": "12-16 ton"
+      },
+      {
+        "Model": "RCP08",
+        "Carrier": "17-23 ton"
+      }
+    ],
+    "image": "../assets/img/Clamp Bucket.png",
+    "url": "",
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Барабанний різак",
+      "en": "Drum Cutter"
+    },
+    "category": "Демонтаж",
+    "price": "Ціну уточнюйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Барабанний фрезер для різання",
+      "en": "Drum cutter for cutting"
+    },
+    "characteristics": {
+      "Carrier Weight": "5-50 ton",
+      "Cutting Width": "400-1500 mm",
+      "Working Pressure": "200-350 bar",
+      "Rotation Speed": "50-150 rpm"
+    },
+    "variants": [],
+    "image": "../assets/img/Drum Cutter.png",
+    "url": "",
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Захват для колод",
+      "en": "Log Grab"
+    },
+    "category": "Сортировка",
+    "price": "Ціну уточнюйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Захват для роботи з деревиною",
+      "en": "Grab for log handling"
+    },
+    "characteristics": {
+      "Carrier Weight": "3-16 ton",
+      "Working Pressure": "160 bar",
+      "Rotation": "360",
+      "Material": "NM400"
+    },
+    "variants": [
+      {
+        "Model": "LG-01",
+        "Carrier": "3-8 ton"
+      },
+      {
+        "Model": "LG-02",
+        "Carrier": "6-10 ton"
+      },
+      {
+        "Model": "LG-04",
+        "Carrier": "12-16 ton"
+      }
+    ],
+    "image": "../assets/img/Log Grab.png",
+    "url": "",
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Гідравлічний дробитель",
+      "en": "Hydraulic Crusher"
+    },
+    "category": "Демонтаж",
+    "price": "Ціну уточнюйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Гідравлічне дробильне обладнання",
+      "en": "Hydraulic crushing equipment"
+    },
+    "characteristics": {
+      "Carrier Weight": "5-45 ton",
+      "Working Pressure": "200-280 bar",
+      "Jaw Type": "Fixed and movable",
+      "Application": "Concrete, steel"
+    },
+    "variants": [],
+    "image": "../assets/img/Hydraulic Crusher.png",
+    "url": "",
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Вібраційний рихлитель",
+      "en": "Vibro Ripper"
+    },
+    "category": "Бурение",
+    "price": "Ціну уточнюйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Рихлитель з вібрацією",
+      "en": "Vibratory ripper"
+    },
+    "characteristics": {
+      "Carrier Weight": "5-35 ton",
+      "Working Pressure": "180-250 bar",
+      "Frequency": "2000-3000 rpm",
+      "Tooth Count": "1-5"
+    },
+    "variants": [],
+    "image": "../assets/img/Vibro Ripper.png",
+    "url": "",
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Змішувальний ківш",
+      "en": "Mixer Bucket"
+    },
+    "category": "Другое",
+    "price": "Ціну уточнюйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Ківш для змішування матеріалів",
+      "en": "Bucket for mixing materials"
+    },
+    "characteristics": {
+      "Carrier Weight": "3-25 ton",
+      "Volume": "0.15-2.0 m",
+      "Mixing Time": "2-5 min",
+      "Material": "Hardox steel"
+    },
+    "variants": [],
+    "image": "../assets/img/Mixer Bucket.png",
+    "url": "",
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Гідравлічний ущільнювач",
+      "en": "Hydraulic Compactor"
+    },
+    "category": "Другое",
+    "price": "Ціну уточнюйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Обладнання для ущільнення грунту",
+      "en": "Equipment for soil compaction"
+    },
+    "characteristics": {
+      "Carrier Weight": "2-30 ton",
+      "Compaction Force": "15-150 kN",
+      "Working Pressure": "150-250 bar",
+      "Frequency": "35-60 Hz"
+    },
+    "variants": [],
+    "image": "../assets/img/Hydraulic Compactor.png",
+    "url": "",
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Пеньковий фрезер",
+      "en": "Stump Planer"
+    },
+    "category": "Бурение",
+    "price": "Ціну уточнюйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Фрезерування пнів",
+      "en": "Stump grinding equipment"
+    },
+    "characteristics": {
+      "Carrier Weight": "2-8 ton",
+      "Diameter": "250-350 mm",
+      "Output Shaft": "65mm Round, 75mm Square"
+    },
+    "variants": [
+      {
+        "Model": "RSP-250",
+        "Carrier": "2-4.5 ton"
+      },
+      {
+        "Model": "RSP-350",
+        "Carrier": "5-8 ton"
+      }
+    ],
+    "image": "../assets/img/Stump Planer.png",
+    "url": "",
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Конус-колун",
+      "en": "Splitter Cone"
+    },
+    "category": "Бурение",
+    "price": "Ціну уточнюйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Конусний колун для дерева",
+      "en": "Cone splitter for wood"
+    },
+    "characteristics": {
+      "Carrier Weight": "1.5-8 ton",
+      "Diameter": "180-250 mm",
+      "Output Shaft": "Ø45-75 mm",
+      "Material": "High-grade steel"
+    },
+    "variants": [
+      {
+        "Model": "RS-100",
+        "Carrier": "1.5-3 ton"
+      },
+      {
+        "Model": "RS-200",
+        "Carrier": "3-5 ton"
+      },
+      {
+        "Model": "RS-250",
+        "Carrier": "5-8 ton"
+      }
+    ],
+    "image": "../assets/img/Splitter Cone.png",
+    "url": "",
+    "source_notes": ""
+  },
+  {
+    "name": {
+      "uk": "Вібропогружувач",
+      "en": "Pile Driver"
+    },
+    "category": "Бурение",
+    "price": "Ціну уточнюйте",
+    "availability": "В наличии",
+    "description": {
+      "uk": "Обладнання для забивання паль",
+      "en": "Pile driving equipment"
+    },
+    "characteristics": {
+      "Carrier Weight": "12-55 ton",
+      "Working Pressure": "300 bar",
+      "Frequency": "2500 rpm",
+      "Centrifugal Force": "193-605 kN"
+    },
+    "variants": [
+      {
+        "Model": "RV-150",
+        "Carrier": "12-15 ton"
+      },
+      {
+        "Model": "RV-200",
+        "Carrier": "20-22 ton"
+      },
+      {
+        "Model": "RV-300",
+        "Carrier": "28-35 ton"
+      }
+    ],
+    "image": "../assets/img/Pile Driver.png",
+    "url": "",
+    "source_notes": ""
+  }
+]
