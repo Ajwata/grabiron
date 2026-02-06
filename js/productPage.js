@@ -64,7 +64,7 @@ function renderProduct(category, subcategory, product) {
   renderImageGallery(product, productName);
   
   // Update page title
-  document.title = `${productName} | GrabIron Attachments`;
+  document.title = `${productName} | Grabiron Attachments`;
 
   // Render features
   renderFeatures(product);

@@ -40,7 +40,7 @@ export const translations = {
     browseSkidSteer: 'Browse Skid Steer Attachments',
     
     // Why Choose Us
-    whyChooseUs: 'Why Choose GrabIron?',
+    whyChooseUs: 'Why Choose Grabiron?',
     whyChooseUsDesc: 'Industry-leading attachments backed by decades of engineering excellence',
     provenPerformance: 'Proven Performance',
     provenPerformanceDesc: 'Our attachments are tested in the most demanding conditions to ensure reliability and longevity in real-world applications.',
@@ -99,7 +99,7 @@ export const translations = {
     successMessage: 'Thank you! Your message has been sent successfully.',
     
     // About page
-    aboutUsTitle: 'About GrabIron',
+    aboutUsTitle: 'About Grabiron',
     aboutUsSubtitle: 'Engineering excellence in excavator attachments since 1985',
     ourStory: 'Our Story',
     engineeringExcellence: 'Engineering Excellence',
@@ -143,7 +143,7 @@ export const translations = {
     sunday: 'Sunday',
     
     // Product Detail
-    'product-title': 'Product | GrabIron Attachments',
+    'product-title': 'Product | Grabiron Attachments',
     'key-features': 'Key Features',
     'technical-specs': 'Technical Specifications',
     'applications': 'Applications',
@@ -234,7 +234,7 @@ export const translations = {
     browseSkidSteer: 'Переглянути обладнання для міні-навантажувачів',
     
     // Why Choose Us
-    whyChooseUs: 'Чому обирають GrabIron?',
+    whyChooseUs: 'Чому обирають Grabiron?',
     whyChooseUsDesc: 'Провідне в галузі обладнання з багаторічним досвідом інженерної досконалості',
     provenPerformance: 'Перевірена продуктивність',
     provenPerformanceDesc: 'Наше обладнання випробовується в найскладніших умовах для забезпечення надійності в реальних умовах експлуатації.',
@@ -293,7 +293,7 @@ export const translations = {
     successMessage: 'Дякуємо! Ваше повідомлення успішно надіслано.',
     
     // About page
-    aboutUsTitle: 'Про GrabIron',
+    aboutUsTitle: 'Про Grabiron',
     aboutUsSubtitle: 'Інженерна досконалість у виробництві навісного обладнання з 1985 року',
     ourStory: 'Наша історія',
     engineeringExcellence: 'Інженерна досконалість',
@@ -337,7 +337,7 @@ export const translations = {
     sunday: 'Неділя',
     
     // Product Detail
-    'product-title': 'Товар | GrabIron Attachments',
+    'product-title': 'Товар | Grabiron Attachments',
     'key-features': 'Ключові особливості',
     'technical-specs': 'Технічні характеристики',
     'applications': 'Застосування',

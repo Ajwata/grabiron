@@ -210,7 +210,7 @@ export async function initSeriesPage() {
     setupCTA(series);
     
     // Update page title
-    document.title = `${series.name} - GrabIron Attachments`;
+    document.title = `${series.name} - Grabiron Attachments`;
     
   } catch (error) {
     console.error('Error loading series:', error);

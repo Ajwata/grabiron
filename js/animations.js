@@ -3,7 +3,7 @@
  * Modern, subtle micro-interactions
  */
 
-class GrabIronAnimations {
+class GrabironAnimations {
   constructor() {
     this.reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     this.init();
@@ -12,11 +12,11 @@ class GrabIronAnimations {
   init() {
     if (this.reducedMotion) {
       document.body.classList.add('reduce-motion');
-      console.log('GrabIron Animations: Reduced motion enabled');
+      console.log('Grabiron Animations: Reduced motion enabled');
       return;
     }
 
-    console.log('GrabIron Animations: Initializing...');
+    console.log('Grabiron Animations: Initializing...');
     // this.initHeroHook(); // Disabled - hero has video background
     this.initSparkButtons();
     this.initSectionLines();
@@ -30,7 +30,7 @@ class GrabIronAnimations {
     this.initPulseIndicators();
     this.initWeldingSparks();
     this.initQualityBadges();
-    console.log('GrabIron Animations: Ready!');
+    console.log('Grabiron Animations: Ready!');
   }
 
   /**
@@ -539,11 +539,11 @@ class GrabIronAnimations {
 export function initAnimations() {
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
-      new GrabIronAnimations();
+      new GrabironAnimations();
     });
   } else {
-    new GrabIronAnimations();
+    new GrabironAnimations();
   }
 }
 
-export default GrabIronAnimations;
+export default GrabironAnimations;

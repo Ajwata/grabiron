@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-title">Товар | GrabIron</title>
+  <title id="page-title">Товар | Grabiron</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/responsive.css">
   <link rel="stylesheet" href="../css/animations.css">
@@ -568,7 +568,7 @@
   <!-- Header -->
   <header class="site-header">
     <div class="header-inner">
-      <a href="../index.html" class="logo"><img src="../assets/img/logo2.webp" alt="GrabIron" style="height: 50px;"></a>
+      <a href="../index.html" class="logo"><img src="../assets/img/logo2.webp" alt="Grabiron" style="height: 50px;"></a>
       
       <nav class="main-nav">
         <ul>
@@ -618,7 +618,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h3>GrabIron Attachments</h3>
+          <h3>Grabiron Attachments</h3>
           <p data-i18n="footerDesc">Premium excavator and skid steer attachments engineered for the toughest jobs. Built to last, designed to perform.</p>
         </div>
         
@@ -652,7 +652,7 @@
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; 2026 GrabIron Attachments. <span data-i18n="allRightsReserved">All rights reserved</span>.</p>
+        <p>&copy; 2026 Grabiron Attachments. <span data-i18n="allRightsReserved">All rights reserved</span>.</p>
       </div>
     </div>
   </footer>
@@ -737,7 +737,7 @@
     }
     
     function renderProduct(product) {
-      document.getElementById('page-title').textContent = `${product.name} | GrabIron`;
+      document.getElementById('page-title').textContent = `${product.name} | Grabiron`;
       document.getElementById('breadcrumb-product').textContent = product.name;
       
       const categoryName = getCategoryDisplayName(product.category);
@@ -953,10 +953,18 @@
       
       // If Ukrainian, check if UA version exists
       if (lang === 'uk' && imagePath && !imagePath.includes('placeholder')) {
+        const noLocalizationFiles = new Set([
+          'Hydraulic Breaker3.png'
+        ]);
+
         // Extract just the filename
         const lastSlash = imagePath.lastIndexOf('/');
         const fileName = imagePath.substring(lastSlash + 1);
         const dirPath = imagePath.substring(0, lastSlash + 1);
+
+        if (noLocalizationFiles.has(fileName)) {
+          return imagePath;
+        }
         
         // Transform filename
         const withoutExt = fileName.replace(/\.(png|jpg|jpeg|gif|svg|webp)$/i, '');
@@ -1031,9 +1039,9 @@
         'ротаційний пульверизатор': ['Rotation Pulverizer.png'],
         
         // Hydraulic Breaker / Гідравлічний молот
-        'гідравлічний молот': ['Hydraulic Breaker2.png'],
-        'hydraulic breaker': ['Hydraulic Breaker2.png'],
-        'breaker': ['Hydraulic Breaker2.png'],
+        'гідравлічний молот': ['Hydraulic Breaker2.png', 'Hydraulic Breaker3.png'],
+        'hydraulic breaker': ['Hydraulic Breaker2.png', 'Hydraulic Breaker3.png'],
+        'breaker': ['Hydraulic Breaker2.png', 'Hydraulic Breaker3.png'],
         
         // Vibro Ripper / Вібраційний рихлитель
         'вібраційний рихлитель': ['vibro ripper.png'],
@@ -1271,7 +1279,7 @@
     function downloadPdf() {
       const pdfPath = getLanguageAwarePdfPath();
       const lang = typeof getCurrentLanguage !== 'undefined' ? getCurrentLanguage() : (localStorage.getItem('language') || 'en');
-      const fileName = lang === 'uk' ? 'GrabIron-RAY-BROCHURE-UA.pdf' : 'GrabIron-RAY-BROCHURE.pdf';
+      const fileName = lang === 'uk' ? 'Grabiron-RAY-BROCHURE-UA.pdf' : 'Grabiron-RAY-BROCHURE.pdf';
       
       const link = document.createElement('a');
       link.href = pdfPath;
