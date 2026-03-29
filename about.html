@@ -10,8 +10,317 @@
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/preloader.css">
   <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .about-page .content-section {
+      background: linear-gradient(180deg, #f8f9fb 0%, #ffffff 100%);
+    }
+
+    .about-layout {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .about-header-card {
+      background: #111;
+      color: #fff;
+      padding: 2rem;
+      border-left: 6px solid var(--color-primary);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+    }
+
+    .about-header-card h2 {
+      margin: 0 0 .5rem;
+      color: #fff;
+      font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+      text-transform: uppercase;
+      letter-spacing: .01em;
+    }
+
+    .about-header-card p {
+      margin: 0;
+      color: rgba(255,255,255,.85);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .about-block {
+      background: #fff;
+      padding: 1.75rem;
+      border: 1px solid #eceff3;
+      box-shadow: 0 4px 14px rgba(0,0,0,.05);
+    }
+
+    .about-block h3 {
+      margin: 0 0 1rem;
+      font-size: 1.35rem;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      letter-spacing: .02em;
+    }
+
+    .about-block p {
+      margin: 0;
+      color: #333;
+      font-size: 1.06rem;
+      line-height: 1.85;
+    }
+
+    .about-block p + p {
+      margin-top: 1rem;
+    }
+
+    .about-gallery {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: .75rem;
+    }
+
+    .about-gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      min-height: 180px;
+      cursor: zoom-in;
+    }
+
+    .about-gallery .gallery-main {
+      grid-column: span 6;
+      grid-row: span 2;
+      min-height: 380px;
+      overflow: hidden;
+    }
+
+    .about-gallery .gallery-item {
+      grid-column: span 3;
+      overflow: hidden;
+    }
+
+    .about-gallery .gallery-main img,
+    .about-gallery .gallery-item img {
+      transition: transform .35s ease;
+    }
+
+    .about-gallery .gallery-main:hover img,
+    .about-gallery .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .about-grid-two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .why-choose-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1rem;
+    }
+
+    .why-card {
+      grid-column: span 6;
+      background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid #e6ebf2;
+      border-top: 4px solid var(--color-primary);
+      padding: 1.15rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-card::after {
+      content: '';
+      position: absolute;
+      right: -26px;
+      top: -26px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(230, 126, 34, 0.08);
+    }
+
+    .why-card h4 {
+      margin: 0 0 .65rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #111;
+      position: relative;
+      z-index: 1;
+    }
+
+    .why-card ul,
+    .why-card p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-card {
+      background: #f8fafc;
+      border: 1px solid #e7edf5;
+      padding: 1rem;
+    }
+
+    .about-card h4 {
+      margin: 0 0 .65rem;
+      color: #111;
+      font-size: 1.02rem;
+      font-weight: 700;
+    }
+
+    .about-card p {
+      margin: 0;
+      line-height: 1.75;
+      color: #333;
+      font-size: 1rem;
+    }
+
+    .about-list {
+      margin: 0;
+      padding-left: 1rem;
+      color: #333;
+    }
+
+    .about-list li {
+      margin: .35rem 0;
+      line-height: 1.7;
+    }
+
+    .process-step {
+      border-left: 4px solid var(--color-primary);
+      background: #f8fafc;
+      border: 1px solid #e7edf5;
+      padding: 1rem;
+      margin-bottom: .9rem;
+      position: relative;
+    }
+
+    .process-step::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 1rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      box-shadow: 0 0 0 4px rgba(230, 126, 34, 0.18);
+    }
+
+    .process-step:last-child {
+      margin-bottom: 0;
+    }
+
+    .process-timeline {
+      position: relative;
+      padding-left: .2rem;
+    }
+
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      left: -4px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(230,126,34,.35), rgba(230,126,34,.07));
+    }
+
+    .photo-zoom-viewer {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 10, 10, 0.92);
+      z-index: 1200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .photo-zoom-viewer.active {
+      display: flex;
+    }
+
+    .photo-zoom-stage {
+      position: relative;
+      width: min(96vw, 1100px);
+      height: min(80vh, 760px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #0f0f0f;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .photo-zoom-image {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transform: scale(1);
+      transform-origin: center center;
+      transition: transform 0.15s ease;
+      touch-action: manipulation;
+      user-select: none;
+    }
+
+    .photo-zoom-controls {
+      position: absolute;
+      right: .75rem;
+      bottom: .75rem;
+      display: flex;
+      gap: .4rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .photo-zoom-btn {
+      min-width: 42px;
+      height: 42px;
+      border: none;
+      background: rgba(255, 255, 255, 0.92);
+      color: #111;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 0 .7rem;
+    }
+
+    .photo-zoom-close {
+      position: absolute;
+      top: .75rem;
+      right: .75rem;
+    }
+
+    .process-step h4 {
+      margin: 0 0 .6rem;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: #111;
+    }
+
+    @media (max-width: 900px) {
+      .about-gallery .gallery-main,
+      .about-gallery .gallery-item {
+        grid-column: span 6;
+      }
+
+      .about-gallery .gallery-main {
+        min-height: 280px;
+      }
+
+      .about-grid-two {
+        grid-template-columns: 1fr;
+      }
+
+      .why-card {
+        grid-column: span 12;
+      }
+    }
+  </style>
 </head>
-<body>
+<body class="about-page">
   
   <!-- Header -->
   <header class="site-header">
@@ -52,103 +361,160 @@
   <!-- About Content -->
   <section class="content-section">
     <div class="container">
-      
-      <!-- Story Section -->
-      <div class="section-title" style="text-align: left; margin-bottom: var(--space-16);">
-        <h2 style="font-weight: 600; letter-spacing: -0.01em;" data-i18n="ourStory">Our Story</h2>
-        <p style="font-size: 1.125rem; line-height: 1.8; max-width: 900px; margin: 0;" data-i18n="ourStoryText1">Grabiron Attachments was founded with a simple mission: to build the most durable, high-performance excavator attachments in the industry. What started as a small workshop has grown into a global leader in attachment manufacturing, serving construction, mining, and industrial customers worldwide.</p>
-        
-        <p style="font-size: 1.125rem; line-height: 1.8; max-width: 900px; margin: 1.5rem 0 0 0;" data-i18n="ourStoryText2">For over three decades, we've been pushing the boundaries of attachment design and engineering. Our commitment to quality, innovation, and customer satisfaction has made us the preferred choice for contractors who demand the best from their equipment.</p>
-      </div>
-
-      <!-- Company Photos Section -->
-      <div class="about-photo-section" style="margin: var(--space-20) 0;">
-        <!-- Photo 1 with Text -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: center; margin-bottom: var(--space-16);">
-          <div style="overflow: hidden; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
-            <img src="assets/img/company.jpg" alt="Grabiron Manufacturing Facility" style="width: 100%; height: 400px; object-fit: cover; display: block;">
-          </div>
-          <div style="padding: var(--space-8);">
-            <h3 style="font-size: 1.875rem; font-weight: 600; margin-bottom: var(--space-4); color: var(--color-primary);" data-i18n="modernFacilities">Modern Facilities</h3>
-            <p style="font-size: 1.0625rem; line-height: 1.8; color: var(--color-gray);" data-i18n="modernFacilitiesDesc">Our state-of-the-art manufacturing facility spans over 50,000 square feet, equipped with the latest CNC machinery, robotic welding stations, and precision testing equipment. This allows us to maintain the highest quality standards while meeting the demands of our growing global customer base.</p>
-          </div>
+      <div class="about-layout">
+        <div class="about-header-card">
+          <h2 data-i18n="aboutUsTitle">About Us GRABIRON</h2>
+          <p data-i18n="aboutUsSubtitle">Grabiron LLC</p>
         </div>
 
-        <!-- Photo 2 with Text (reversed layout) -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-12); align-items: center;">
-          <div style="padding: var(--space-8);">
-            <h3 style="font-size: 1.875rem; font-weight: 600; margin-bottom: var(--space-4); color: var(--color-primary);" data-i18n="expertTeam">Expert Team</h3>
-            <p style="font-size: 1.0625rem; line-height: 1.8; color: var(--color-gray);" data-i18n="expertTeamDesc">Behind every Grabiron attachment is a team of dedicated professionals—engineers, welders, quality inspectors, and customer support specialists—all committed to delivering products that exceed expectations. Our experienced team members bring decades of combined knowledge in heavy equipment and attachment design.</p>
-          </div>
-          <div style="overflow: hidden; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
-            <img src="assets/img/company 2.jpg" alt="Grabiron Expert Team" style="width: 100%; height: 400px; object-fit: cover; display: block;">
-          </div>
-        </div>
-      </div>
+        <article class="about-block">
+          <h3 data-i18n="ourStory">History</h3>
+          <p data-i18n="rayAttachmentsTitle">GRABIRON RAY Attachments</p>
+          <p data-i18n="ourStoryText1">At the beginning of the 1990s, our plant produced equipment and machinery for mining and metallurgical companies.</p>
+          <p data-i18n="ourStoryText2">In 2006, we became subcontractors for Finnish companies manufacturing mining equipment.</p>
+          <p data-i18n="ourStoryText3">After 9 years of high-quality production, we founded Grabiron LLC jointly with the British company Corrosioneering Group Ltd, while also manufacturing steel structures for excavator attachments for Atlas Copco.</p>
+        </article>
 
-      <!-- Values Cards -->
-      <div class="benefits-magnetic-grid">
-        <div class="benefit-blob-card" data-magnetic style="background: var(--color-white); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-          <div class="benefit-content-wrap">
-            <div class="benefit-icon-liquid" style="background: var(--color-primary);">
-              <svg class="benefit-icon" viewBox="0 0 24 24" fill="currentColor" style="color: white;">
-                <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
-              </svg>
+        <article class="about-block">
+          <h3 data-i18n="qualityStandards">Quality Standards</h3>
+          <p data-i18n="qualityStandardsText1">For 12 years, our plant has exported products for Sandvik and Metso; recently we also manufacture key parts for Atlas Copco attachments and apply their production standards in our own products.</p>
+          <p data-i18n="qualityStandardsText2">With ISO 9001 certification, deep manufacturing experience, and hydraulics from leading European suppliers, our products are not only on par with European analogs, but in many cases exceed them.</p>
+          <p data-i18n="qualityStandardsText3">We have a full production cycle, including casting and assembly, and purchase only standard components from Italian and Swedish manufacturers.</p>
+        </article>
+
+        <article class="about-block">
+          <h3 data-i18n="partnershipTitle">Partnership and Development</h3>
+          <p data-i18n="partnershipText1">Since 2025, we have signed an exclusive agreement with the popular Chinese attachment manufacturer Ray Attachments, significantly expanding the product range sold in Ukraine.</p>
+          <p data-i18n="partnershipText2">In recent years, China’s machine-building industry has made a technological leap, and Ray Attachments has proven in its segment that European quality at a competitive price is the new reality.</p>
+        </article>
+
+        <article class="about-block">
+          <h3 data-i18n="aboutGalleryTitle">Our Production and Team</h3>
+          <div class="about-gallery">
+            <div class="gallery-main">
+              <img src="assets/img/pro%20nas/pro%20nas.jpg" alt="Grabiron production">
             </div>
-            <h3 style="font-weight: 600; font-size: 1.25rem; color: var(--color-text);" data-i18n="engineeringExcellence">Engineering Excellence</h3>
-            <p style="font-size: 1rem; line-height: 1.7; color: var(--color-gray);" data-i18n="engineeringExcellenceDesc">Every Grabiron attachment is designed using advanced CAD modeling, finite element analysis, and real-world testing to ensure exceptional performance in the most demanding conditions.</p>
+            <div class="gallery-item"><img src="assets/img/pro%20nas/pro%20nas%202.jpg" alt="Grabiron"></div>
+            <div class="gallery-item"><img src="assets/img/pro%20nas/pro%20nas%203.jpg" alt="Grabiron"></div>
+            <div class="gallery-item"><img src="assets/img/pro%20nas/pro%20nas%204.jpg" alt="Grabiron"></div>
+            <div class="gallery-item"><img src="assets/img/pro%20nas/pro%20nas%205.jpg" alt="Grabiron"></div>
+            <div class="gallery-item"><img src="assets/img/pro%20nas/pro%20nas%206.jpg" alt="Grabiron"></div>
+            <div class="gallery-item"><img src="assets/img/pro%20nas/pro%20nas%207.jpg" alt="Grabiron"></div>
           </div>
-        </div>
-        
-        <div class="benefit-blob-card" data-magnetic style="background: var(--color-white); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-          <div class="benefit-content-wrap">
-            <div class="benefit-icon-liquid" style="background: var(--color-primary);">
-              <svg class="benefit-icon" viewBox="0 0 24 24" fill="currentColor" style="color: white;">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-              </svg>
-            </div>
-            <h3 style="font-weight: 600; font-size: 1.25rem; color: var(--color-text);" data-i18n="qualityManufacturing">Quality Manufacturing</h3>
-            <p style="font-size: 1rem; line-height: 1.7; color: var(--color-gray);" data-i18n="qualityManufacturingDesc">State-of-the-art facilities staffed by skilled technicians. Each attachment undergoes rigorous inspection and testing before leaving our factory.</p>
-          </div>
-        </div>
-        
-        <div class="benefit-blob-card" data-magnetic style="background: var(--color-white); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-          <div class="benefit-content-wrap">
-            <div class="benefit-icon-liquid" style="background: var(--color-primary);">
-              <svg class="benefit-icon" viewBox="0 0 24 24" fill="currentColor" style="color: white;">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-              </svg>
-            </div>
-            <h3 style="font-weight: 600; font-size: 1.25rem; color: var(--color-text);" data-i18n="globalReach">Global Reach</h3>
-            <p style="font-size: 1rem; line-height: 1.7; color: var(--color-gray);" data-i18n="globalReachDesc">Distribution partners and service centers worldwide provide local support backed by global expertise wherever your projects take you.</p>
-          </div>
-        </div>
-      </div>
+        </article>
 
-      <!-- Quality Features -->
-      <div class="section-title" style="text-align: left; margin: var(--space-20) 0;">
-        <h2 style="font-weight: 600; letter-spacing: -0.01em;" data-i18n="qualityStandards">Quality Standards</h2>
-        <div class="feature-box" style="background: var(--color-white); padding: var(--space-8); box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-top: var(--space-6);">
-          <h3 style="font-weight: 600; font-size: 1.5rem; margin-bottom: var(--space-4); color: var(--color-primary);" data-i18n="iso9001">ISO 9001 Certified Manufacturing</h3>
-          <ul style="margin: 1rem 0 0 1.5rem; color: #555; font-size: 1.0625rem; line-height: 2;">
-            <li style="margin-bottom: var(--space-2);" data-i18n="qualityFeature1">High-grade steel construction for maximum durability</li>
-            <li style="margin-bottom: var(--space-2);" data-i18n="qualityFeature2">Precision machining for optimal fit and performance</li>
-            <li style="margin-bottom: var(--space-2);" data-i18n="qualityFeature3">Advanced welding techniques for superior strength</li>
-            <li style="margin-bottom: var(--space-2);" data-i18n="qualityFeature4">Comprehensive quality assurance testing at every stage</li>
-            <li data-i18n="qualityFeature5">Continuous improvement based on customer feedback</li>
-          </ul>
-        </div>
-      </div>
-        
-      <div class="section-title" style="text-align: left; margin: var(--space-16) 0;">
-        <h2 style="font-weight: 600; letter-spacing: -0.01em;" data-i18n="innovationSustainability">Innovation & Sustainability</h2>
-        <p style="font-size: 1.125rem; line-height: 1.8; max-width: 900px; margin: 0;" data-i18n="innovationText1">The construction industry is constantly evolving, and so are we. Our R&D team continuously works on new designs and improvements to keep our products at the forefront of the industry. We're committed to reducing our environmental impact through sustainable manufacturing practices and products designed for longevity.</p>
-        
-        <p style="font-size: 1.125rem; line-height: 1.8; max-width: 900px; margin: 1.5rem 0 0 0;" data-i18n="innovationText2">By building attachments that last longer and perform better, we help reduce waste and improve the sustainability of construction operations worldwide.</p>
+        <article class="about-block">
+          <h3 data-i18n="whyChooseTitle">Why Choose Us</h3>
+          <div class="why-choose-grid">
+            <div class="why-card">
+              <h4 data-i18n="guaranteeTitle">Guarantee Without Problems</h4>
+              <ul class="about-list">
+                <li data-i18n="guaranteeItem1">12-36 months from GRABIRON factory</li>
+              </ul>
+            </div>
+
+            <div class="why-card">
+              <h4 data-i18n="fastResponseTitle">Fast Response</h4>
+              <ul class="about-list">
+                <li data-i18n="fastResponseItem1">Response within 2 hours</li>
+                <li data-i18n="fastResponseItem2">Solution within 12 hours</li>
+              </ul>
+            </div>
+
+            <div class="why-card">
+              <h4 data-i18n="businessSupportTitle">Business Support</h4>
+              <p data-i18n="businessSupportText">Customer multiplier plan</p>
+            </div>
+
+            <div class="why-card">
+              <h4 data-i18n="stockTitle">Finished Goods Warehouse in Ukraine</h4>
+              <ul class="about-list">
+                <li data-i18n="stockItem1">Save up to 30% of your costs</li>
+                <li data-i18n="stockItem2">Save 50% of your time</li>
+                <li data-i18n="stockItem3">Make business simple</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="about-block">
+          <h3 data-i18n="qualityProcessTitle">Quality System Process</h3>
+
+          <div class="process-timeline">
+          <div class="process-step">
+            <h4 data-i18n="processStep1Title">1. Raw Material Inspection</h4>
+            <ul class="about-list">
+              <li data-i18n="processStep1Item1">Steel chemical composition control</li>
+              <li data-i18n="processStep1Item2">Steel mechanical properties control</li>
+              <li data-i18n="processStep1Item3">Steel sheet hardness control</li>
+              <li data-i18n="processStep1Item4">Raw material size control</li>
+            </ul>
+          </div>
+
+          <div class="process-step">
+            <h4 data-i18n="processStep2Title">2. Pre-Production Inspection</h4>
+            <ul class="about-list">
+              <li data-i18n="processStep2Item1">Cutting parts dimension check</li>
+            </ul>
+          </div>
+
+          <div class="process-step">
+            <h4 data-i18n="processStep3Title">3. In-Process Inspection</h4>
+            <ul class="about-list">
+              <li data-i18n="processStep3Item1">Welding process inspection</li>
+              <li data-i18n="processStep3Item2">Oversized goods inspection</li>
+              <li data-i18n="processStep3Item3">High-precision parts inspection</li>
+            </ul>
+          </div>
+
+          <div class="process-step">
+            <h4 data-i18n="processStep4Title">4. Hydraulic and Electrical Parts Inspection</h4>
+            <ul class="about-list">
+              <li data-i18n="processStep4Item1">Cylinder check before installation</li>
+              <li data-i18n="processStep4Item2">Motor check before installation</li>
+              <li data-i18n="processStep4Item3">Valve check before installation</li>
+            </ul>
+          </div>
+
+          <div class="process-step">
+            <h4 data-i18n="processStep5Title">5. Assembly Inspection</h4>
+            <ul class="about-list">
+              <li data-i18n="processStep5Item1">Assembly process inspection</li>
+              <li data-i18n="processStep5Item2">Functional test of assembly performance</li>
+              <li data-i18n="processStep5Item3">Coating appearance inspection</li>
+              <li data-i18n="processStep5Item4">Coating thickness inspection</li>
+              <li data-i18n="processStep5Item5">Coating adhesion test</li>
+            </ul>
+          </div>
+
+          <div class="process-step" style="margin-bottom: 0;">
+            <h4 data-i18n="processStep6Title">6. Pre-Delivery Inspection</h4>
+            <ul class="about-list">
+              <li data-i18n="processStep6Item1">Painting inspection</li>
+              <li data-i18n="processStep6Item2">Readiness inspection</li>
+              <li data-i18n="processStep6Item3">Compliance check with individual requirements</li>
+              <li data-i18n="processStep6Item4">Pre-delivery testing</li>
+              <li data-i18n="processStep6Item5">Packaging inspection</li>
+            </ul>
+          </div>
+          </div>
+        </article>
       </div>
       
     </div>
   </section>
+
+  <div class="photo-zoom-viewer" id="photo-zoom-viewer" aria-hidden="true">
+    <div class="photo-zoom-stage">
+      <img class="photo-zoom-image" id="photo-zoom-image" src="" alt="">
+      <button class="photo-zoom-btn photo-zoom-close" data-zoom-action="close" aria-label="Close">x</button>
+      <div class="photo-zoom-controls">
+        <button class="photo-zoom-btn" data-zoom-action="zoom-out" aria-label="Zoom out">-</button>
+        <button class="photo-zoom-btn" data-zoom-action="reset" aria-label="Reset zoom">100%</button>
+        <button class="photo-zoom-btn" data-zoom-action="zoom-in" aria-label="Zoom in">+</button>
+      </div>
+    </div>
+  </div>
   
   <!-- CTA Section -->
   <section class="cta-section" style="background: var(--color-primary);">
@@ -210,11 +576,75 @@
   <script type="module">
     import { initLangSwitcher } from './js/lang.js';
     import { initAnimations } from './js/animations.js';
+
+    function initPhotoZoomViewer() {
+      const viewer = document.getElementById('photo-zoom-viewer');
+      const viewerImage = document.getElementById('photo-zoom-image');
+      const galleryImages = document.querySelectorAll('.about-gallery img');
+      if (!viewer || !viewerImage || galleryImages.length === 0) return;
+
+      let currentZoom = 1;
+      const minZoom = 1;
+      const maxZoom = 4;
+      const step = 0.25;
+
+      const applyZoom = () => {
+        viewerImage.style.transform = `scale(${currentZoom})`;
+      };
+
+      const openViewer = (src, alt) => {
+        viewerImage.src = src;
+        viewerImage.alt = alt || 'Photo';
+        currentZoom = 1;
+        applyZoom();
+        viewer.classList.add('active');
+        viewer.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeViewer = () => {
+        viewer.classList.remove('active');
+        viewer.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      };
+
+      galleryImages.forEach((img) => {
+        img.addEventListener('click', () => openViewer(img.src, img.alt));
+      });
+
+      viewer.addEventListener('click', (event) => {
+        const action = event.target.getAttribute('data-zoom-action');
+        if (!action) {
+          if (event.target === viewer) closeViewer();
+          return;
+        }
+
+        if (action === 'close') closeViewer();
+        if (action === 'zoom-in') {
+          currentZoom = Math.min(maxZoom, currentZoom + step);
+          applyZoom();
+        }
+        if (action === 'zoom-out') {
+          currentZoom = Math.max(minZoom, currentZoom - step);
+          applyZoom();
+        }
+        if (action === 'reset') {
+          currentZoom = 1;
+          applyZoom();
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (!viewer.classList.contains('active')) return;
+        if (event.key === 'Escape') closeViewer();
+      });
+    }
     
     // Initialize language switcher
     document.addEventListener('DOMContentLoaded', () => {
       initLangSwitcher();
       initAnimations();
+      initPhotoZoomViewer();
     });
   </script>
   <script type="module" src="js/preloader.js"></script>

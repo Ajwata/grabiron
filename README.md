@@ -1,4 +1,4 @@
-# GrabIron Attachments Website
+# Grabiron Attachments Website
 
 Багатомовний (англійська/українська) статичний веб-сайт для B2B каталогу навісного обладнання для екскаваторів.
 
@@ -262,4 +262,4 @@ server {
 
 ---
 
-**© 2026 GrabIron Attachments. Всі права захищені.**
+**© 2026 Grabiron Attachments. Всі права захищені.**

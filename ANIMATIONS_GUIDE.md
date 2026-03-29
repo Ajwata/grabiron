@@ -1,6 +1,6 @@
-# GrabIron Industrial Animations
+# Grabiron Industrial Animations
 
-Современная система микроанимаций в индустриальном стиле для сайта GrabIron.
+Современная система микроанимаций в индустриальном стиле для сайта Grabiron.
 
 ## Установка
 

@@ -59,12 +59,12 @@ assets/pdf/product-catalog.pdf
 ### Изменить путь к PDF файлу
 Если хотите использовать другое имя файла, найдите в `products/detail.html` строку:
 ```html
-<a href="../assets/pdf/product-catalog.pdf" download="GrabIron-Products-Catalog.pdf"
+<a href="../assets/pdf/product-catalog.pdf" download="Grabiron-Products-Catalog.pdf"
 ```
 
 Измените:
 - `href="../assets/pdf/product-catalog.pdf"` - путь к вашему файлу
-- `download="GrabIron-Products-Catalog.pdf"` - имя файла при скачивании
+- `download="Grabiron-Products-Catalog.pdf"` - имя файла при скачивании
 
 ### Изменить тексты
 Измените переводы в файле `js/i18n.js`:

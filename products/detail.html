@@ -936,8 +936,8 @@
     }
     
     function getLanguageAwarePdfPath() {
-      // Get current language from i18n
-      const lang = typeof getCurrentLanguage !== 'undefined' ? getCurrentLanguage() : (localStorage.getItem('language') || 'en');
+      // Use canonical language getter from lang.js
+      const lang = getCurrentLang();
       
       // Return appropriate PDF based on language
       if (lang === 'uk') {
@@ -948,8 +948,8 @@
     }
     
     function getLanguageAwareImagePath(imagePath) {
-      // Get current language from i18n
-      const lang = typeof getCurrentLanguage !== 'undefined' ? getCurrentLanguage() : (localStorage.getItem('language') || 'en');
+      // Use canonical language getter from lang.js
+      const lang = getCurrentLang();
       
       // If Ukrainian, check if UA version exists
       if (lang === 'uk' && imagePath && !imagePath.includes('placeholder')) {
@@ -981,7 +981,27 @@
       const nameLower = productName.toLowerCase();
       const images = [];
       const basePath = '../assets/img/info/';
-      const lang = typeof getCurrentLanguage !== 'undefined' ? getCurrentLanguage() : (localStorage.getItem('language') || 'en');
+      const lang = getCurrentLang();
+
+      // Explicit language-specific images for Eagle Shear in description/specs area.
+      if (
+        nameLower.includes('eagle shear') ||
+        nameLower.includes('гідроножиці') ||
+        nameLower.includes('ножиці') ||
+        nameLower.includes('scrap shear')
+      ) {
+        return [lang === 'uk' ? '../assets/img/Eagle shears UA.png' : '../assets/img/Eagle shears ENG.png'];
+      }
+
+      // Explicit language-specific images for Crusher Bucket in description/specs area.
+      if (
+        nameLower.includes('crusher bucket') ||
+        nameLower.includes('crush bucket') ||
+        nameLower.includes('дробильний ківш') ||
+        nameLower.includes('дробарка ковш')
+      ) {
+        return [lang === 'uk' ? '../assets/img/Crush bucket UA.png' : '../assets/img/Crush bucket ENG.png'];
+      }
       
       console.log('=== SEARCHING IMAGES ===');
       console.log('Product name:', productName);
@@ -1278,7 +1298,7 @@
     // Function to download language-aware PDF
     function downloadPdf() {
       const pdfPath = getLanguageAwarePdfPath();
-      const lang = typeof getCurrentLanguage !== 'undefined' ? getCurrentLanguage() : (localStorage.getItem('language') || 'en');
+      const lang = getCurrentLang();
       const fileName = lang === 'uk' ? 'Grabiron-RAY-BROCHURE-UA.pdf' : 'Grabiron-RAY-BROCHURE.pdf';
       
       const link = document.createElement('a');

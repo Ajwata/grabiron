@@ -717,7 +717,9 @@
         const variantsCount = product.variants?.length || 0;
         
         // Get product image
-        const productImage = (product.images && product.images.length > 0) ? product.images[0] : (product.image || '../assets/img/product-placeholder.svg');
+        let productImage = (product.images && product.images.length > 0) ? product.images[0] : (product.image || '../assets/img/product-placeholder.svg');
+
+        const productNameLower = (product.name || '').toLowerCase();
         
         return `
           <div class="product-card">

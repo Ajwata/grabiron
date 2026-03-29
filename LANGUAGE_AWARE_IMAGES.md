@@ -160,8 +160,8 @@ function downloadPdf() {
   const pdfPath = getLanguageAwarePdfPath();
   const lang = getCurrentLanguage();
   const fileName = lang === 'uk' ? 
-    'GrabIron-RAY-BROCHURE-UA.pdf' : 
-    'GrabIron-RAY-BROCHURE.pdf';
+    'Grabiron-RAY-BROCHURE-UA.pdf' : 
+    'Grabiron-RAY-BROCHURE.pdf';
   
   const link = document.createElement('a');
   link.href = pdfPath;
@@ -208,6 +208,6 @@ export function getLanguageAwarePdfPath(baseName = 'RAY BROCHURE') {
 1. Откройте страницу товара (detail.html)
 2. Прокрутите до раздела "Download Full Catalog"
 3. Нажмите кнопку **Download**:
-   - При **УКР**: скачивается `GrabIron-RAY-BROCHURE-UA.pdf` (12.59 MB)
-   - При **EN**: скачивается `GrabIron-RAY-BROCHURE.pdf` (6.00 MB)
+  - При **УКР**: скачивается `Grabiron-RAY-BROCHURE-UA.pdf` (12.59 MB)
+  - При **EN**: скачивается `Grabiron-RAY-BROCHURE.pdf` (6.00 MB)
 4. То же самое протестируйте на странице Downloads
